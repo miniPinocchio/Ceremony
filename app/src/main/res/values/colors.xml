@@ -2,8 +2,33 @@
 <resources>
     <color name="action_bar_background">#228fe0</color>
     <color name="white">#fff</color>
+
+    <!-- App主色 -->
+    <color name="main_color">#228fe0</color>
+    <color name="write">#fff</color>
     <color name="window_background">#f2f2f2</color>
     <color name="forget_password_color">#f27b33</color>
     <color name="login_button_color">#188de4</color>
     <color name="register_button_color">#df6d1f</color>
+
+    <color name="colorPrimary">#228fe0</color>
+    <color name="colorPrimaryDark">#0277bd</color>
+    <color name="textColor">#333333</color>
+
+    <!-- 常用颜色值 -->
+    <color name="white40">#40FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+    <color name="red">#FF0000</color>
+    <color name="gold">#FFD700</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#008000</color>
+    <color name="purple">#800080</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="orange">#FFA500</color>
+    <color name="lemonyellow">#FFFACD</color>
+    <color name="graywhite">#F5F5F5</color>
+    <color name="grayslate">#708090</color>
+    <color name="lightblue">#0083FF</color>
 </resources>
