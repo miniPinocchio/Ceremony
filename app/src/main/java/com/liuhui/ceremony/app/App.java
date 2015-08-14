@@ -1,14 +1,11 @@
 package com.liuhui.ceremony.app;
 
 import android.app.Application;
-import android.content.Context;
 
 /**
  * 应用App类
  */
 public class App extends Application {
-
-	public static Context mContext;
 
 	private static App instance;
 
@@ -18,7 +15,6 @@ public class App extends Application {
 	public void onCreate() {
 		super.onCreate();
 		instance = this;
-		mContext = getApplicationContext();
 	}
 
 	public static App getInstance(){
