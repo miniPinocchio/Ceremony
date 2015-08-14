@@ -3,6 +3,11 @@
 
     <string name="login_title">登陆账号</string>
     <string name="cancel">取消</string>
+    <string name="mobile_phone">手机号</string>
+    <string name="password">密码</string>
+    <string name="input_login_mobile_phone">请输入所注册的手机号</string>
+    <string name="input_login_password">请输入6–12位密码</string>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 </resources>

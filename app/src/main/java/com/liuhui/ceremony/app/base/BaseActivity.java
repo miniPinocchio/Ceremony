@@ -7,8 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import com.liuhui.ceremony.app.AppManager;
 import com.liuhui.ceremony.app.util.LogUtil;
 
-import butterknife.ButterKnife;
-
 /**
  * Activity基类
  */
@@ -41,7 +39,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		initViews();
-		ButterKnife.inject(this);
+
 		AppManager.getAppManager().addActivity(this);
 	}
 

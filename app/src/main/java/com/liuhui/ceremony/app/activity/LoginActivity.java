@@ -7,13 +7,15 @@ import android.widget.TextView;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 
 /**
  * 登陆界面
  */
-public class LoginActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity {
 
 	@InjectView(R.id.back)
 	ImageView back;
@@ -27,17 +29,20 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 	@Override
 	protected void initViews() {
 		setContentView(R.layout.activity_login);
-		back.setOnClickListener(this);
+
+		ButterKnife.inject(this);
 
 		title.setText(R.string.login_title);
 		rightText.setText(R.string.cancel);
 	}
 
-	@Override
-	public void onClick(View v) {
+	@OnClick(value = { R.id.back, R.id.actionBarRightText })
+	void setClickEvent(View v) {
 		switch(v.getId()) {
 			case R.id.back:
 				finish();
+				break;
+			case R.id.actionBarRightText:
 				break;
 		}
 	}
