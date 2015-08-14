@@ -5,7 +5,7 @@ import android.os.Handler;
 
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
-import com.liuhui.ceremony.app.fragment.LoginFragment;
+import com.liuhui.ceremony.app.ui.fragment.LoginFragment;
 
 /**
  * 启动界面

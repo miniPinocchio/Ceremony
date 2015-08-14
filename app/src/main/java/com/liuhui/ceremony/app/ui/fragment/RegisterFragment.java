@@ -1,4 +1,4 @@
-package com.liuhui.ceremony.app.fragment;
+package com.liuhui.ceremony.app.ui.fragment;
 
 import android.view.View;
 import android.widget.EditText;

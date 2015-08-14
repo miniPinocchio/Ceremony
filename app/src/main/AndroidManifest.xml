@@ -23,7 +23,7 @@
 <<<<<<< Updated upstream
             android:name=".fragment.LoginFragment"/>
         <activity
-            android:name=".fragment.RegisterFragment"/>
+            android:name=".ui.fragment.RegisterFragment"/>
 =======
             android:name=".ui.activity.LoginActivity"/>
 >>>>>>> Stashed changes
