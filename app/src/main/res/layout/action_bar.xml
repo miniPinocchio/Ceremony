@@ -8,8 +8,27 @@
                 android:paddingRight="10dp">
 
     <ImageView
+        android:id="@id/back"
         android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:src="@mipmap/icon_back"/>
+
+    <TextView
+        android:id="@id/actionBarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/write"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@id/actionBarRightText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/actionBarTitle"
+        android:textColor="@color/write"
+        android:textSize="14sp"/>
 </RelativeLayout>
