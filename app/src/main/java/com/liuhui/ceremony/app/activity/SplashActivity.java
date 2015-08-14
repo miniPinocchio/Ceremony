@@ -5,6 +5,7 @@ import android.os.Handler;
 
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
+import com.liuhui.ceremony.app.fragment.LoginFragment;
 
 /**
  * 启动界面
@@ -21,7 +22,7 @@ public class SplashActivity extends BaseActivity {
 
 			@Override
 			public void run() {
-				startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+				startActivity(new Intent(SplashActivity.this, LoginFragment.class));
 				finish();
 			}
 		}, 2000);

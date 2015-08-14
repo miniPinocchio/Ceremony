@@ -13,5 +13,8 @@
     <item name="goHome" type="id"/>
 
     <!-- register ui -->
+    <item name="confirmPassword" type="id"/>
+    <item name="authCode" type="id"/>
+    <item name="getAuthCode" type="id"/>
 
 </resources>

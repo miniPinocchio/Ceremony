@@ -1,6 +1,7 @@
 package com.liuhui.ceremony.app;
 
 import android.app.Application;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.widget.Toast;
@@ -12,7 +13,7 @@ import android.widget.Toast;
  */
 public class App extends Application {
 
-	private static App instance;
+	private static Context instance;
 
 	private static String FIRST_OPEN_APP = "first_open_app.pref";
 
@@ -22,7 +23,7 @@ public class App extends Application {
 		instance = this;
 	}
 
-	public static App getInstance() {
+	public static Context getInstance() {
 		return instance;
 	}
 

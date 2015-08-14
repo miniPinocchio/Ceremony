@@ -1,8 +1,8 @@
-package com.liuhui.ceremony.app.activity;
+package com.liuhui.ceremony.app.fragment;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.liuhui.ceremony.app.Api;
@@ -10,9 +10,15 @@ import com.liuhui.ceremony.app.App;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
 import com.liuhui.ceremony.app.constant.RequestParam;
+import com.liuhui.ceremony.app.util.LogUtil;
+import com.liuhui.ceremony.app.util.OkHttpUtil;
+import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+
+import java.io.IOException;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -24,19 +30,13 @@ import butterknife.OnClick;
  * <p/>
  * Created by __Berial___
  */
-public class LoginActivity extends BaseActivity {
-
-	@InjectView(R.id.back)
-	ImageView back;
+public class LoginFragment extends BaseActivity {
 
 	@InjectView(R.id.actionBarTitle)
 	TextView title;
 
 	@InjectView(R.id.actionBarRightText)
 	TextView rightText;
-
-	@InjectView(R.id.forgetPassword)
-	TextView forgetPassword;
 
 	@InjectView(R.id.mobilePhone)
 	EditText mobilePhone;
@@ -72,6 +72,7 @@ public class LoginActivity extends BaseActivity {
 				login();
 				break;
 			case R.id.register:
+				startActivity(new Intent(this, RegisterFragment.class));
 				break;
 			case R.id.forgetPassword:
 				break;
@@ -87,14 +88,19 @@ public class LoginActivity extends BaseActivity {
 
 		if(strMobilePhone.length() == 0) {
 			App.toast("未输入手机号");
+			return;
 		} else if(strMobilePhone.length() < 11) {
 			App.toast("手机号未输入完整");
-		} else if(App.isMobilePhone(strMobilePhone)) {
+			return;
+		} else if(!App.isMobilePhone(strMobilePhone)) {
 			App.toast("不存在此手机号");
+			return;
 		} else if(strPassword.length() == 0) {
 			App.toast("未输入密码");
+			return;
 		} else if(strPassword.length() < 6) {
 			App.toast("密码未输入完整");
+			return;
 		}
 
 		RequestBody requestBody = new FormEncodingBuilder()
@@ -106,16 +112,18 @@ public class LoginActivity extends BaseActivity {
 				.post(requestBody)
 				.build();
 
-//		OkHttpUtil.enqueue(loginRequest, new Callback() {
-//			@Override
-//			public void onFailure(Request request, IOException e) {
-//				App.toast("登录失败，请重试");
-//			}
-//
-//			@Override
-//			public void onResponse(Response response) throws IOException {
-//				App.toast(response.body().string());
-//			}
-//		});
+		OkHttpUtil.enqueue(loginRequest, new Callback() {
+			@Override
+			public void onFailure(Request request, IOException e) {
+				//				App.toast("登录失败，请重试");
+				LogUtil.e("登录失败，请重试");
+			}
+
+			@Override
+			public void onResponse(Response response) throws IOException {
+				//				App.toast(response.body().string());
+				LogUtil.e(response.body().string());
+			}
+		});
 	}
 }
