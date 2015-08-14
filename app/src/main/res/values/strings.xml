@@ -7,6 +7,10 @@
     <string name="password">密码</string>
     <string name="input_login_mobile_phone">请输入所注册的手机号</string>
     <string name="input_login_password">请输入6–12位密码</string>
+    <string name="forget_password"><u>忘记密码？</u></string>
+    <string name="login">登陆</string>
+    <string name="register">注册</string>
+    <string name="go_home">去看看</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

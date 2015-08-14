@@ -17,21 +17,20 @@
         android:src="@mipmap/icon_back"/>
 
     <TextView
-        android:id="@id/actionBarTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textColor="@color/write"
-        android:text="@string/app_name"
-        android:textSize="18sp"/>
-
-    <TextView
         android:id="@id/actionBarRightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/actionBarTitle"
-        android:textColor="@color/write"
+        android:textColor="@color/white"
         android:textSize="14sp"/>
+
+    <TextView
+        android:id="@id/actionBarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
 </RelativeLayout>

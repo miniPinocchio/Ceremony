@@ -63,4 +63,56 @@
             android:padding="5dp"
             android:textSize="14sp"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@id/forgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:padding="10dp"
+        android:text="@string/forget_password"
+        android:textColor="@color/forget_password_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.25"
+            android:background="@drawable/shape_login_button"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:text="@string/login"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.25"
+            android:background="@drawable/shape_register_button"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:text="@string/register"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_round_rect"
+        android:paddingBottom="5dp"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp"
+        android:paddingTop="5dp"
+        android:text="@string/go_home"/>
 </LinearLayout>

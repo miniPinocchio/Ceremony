@@ -4,4 +4,5 @@
     <item name="actionBarTitle" type="id"/>
     <item name="actionBarRightText" type="id"/>
     <item name="back" type="id"/>
+    <item name="forgetPassword" type="id"/>
 </resources>

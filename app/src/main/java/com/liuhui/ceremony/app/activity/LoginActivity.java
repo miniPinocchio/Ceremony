@@ -28,6 +28,9 @@ public class LoginActivity extends BaseActivity {
 	@InjectView(R.id.actionBarRightText)
 	TextView rightText;
 
+	@InjectView(R.id.forgetPassword)
+	TextView forgetPassword;
+
 	@Override
 	protected void initViews() {
 		setContentView(R.layout.activity_login);
