@@ -24,6 +24,7 @@
             android:textSize="16sp"/>
 
         <EditText
+            android:id="@id/mobilePhone"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.85"
@@ -53,6 +54,7 @@
             android:textSize="16sp"/>
 
         <EditText
+            android:id="@id/password"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.85"
@@ -82,6 +84,7 @@
         android:weightSum="1">
 
         <TextView
+            android:id="@id/login"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -93,6 +96,7 @@
             android:textColor="@color/white"/>
 
         <TextView
+            android:id="@id/register"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -105,6 +109,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@id/goHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

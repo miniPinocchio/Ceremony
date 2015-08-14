@@ -22,4 +22,12 @@ public class App extends Application {
 	public static App getInstance(){
 		return instance;
 	}
+
+	/**
+	 * 是否是手机号
+	 */
+	public static boolean isMobilePhone(String text) {
+		String matcher = "^((1[3,5,8][0-9])|(14[5,7])|(17[0,6,7,8]))\\d{8}$";
+		return text.matches(matcher);
+	}
 }

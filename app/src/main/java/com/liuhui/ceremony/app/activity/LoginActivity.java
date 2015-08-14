@@ -1,6 +1,7 @@
 package com.liuhui.ceremony.app.activity;
 
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +32,12 @@ public class LoginActivity extends BaseActivity {
 	@InjectView(R.id.forgetPassword)
 	TextView forgetPassword;
 
+	@InjectView(R.id.mobilePhone)
+	EditText mobilePhone;
+
+	@InjectView(R.id.password)
+	EditText password;
+
 	@Override
 	protected void initViews() {
 		setContentView(R.layout.fragment_login);
@@ -41,7 +48,11 @@ public class LoginActivity extends BaseActivity {
 		rightText.setText(R.string.cancel);
 	}
 
-	@OnClick(value = { R.id.back, R.id.actionBarRightText })
+	/**
+	 * 设置按钮的点击事件
+	 */
+	@OnClick(value = { R.id.back, R.id.actionBarRightText, R.id.goHome,
+			R.id.login, R.id.register, R.id.forgetPassword })
 	void setClickEvent(View v) {
 		switch(v.getId()) {
 			case R.id.back:
@@ -49,6 +60,22 @@ public class LoginActivity extends BaseActivity {
 				break;
 			case R.id.actionBarRightText:
 				break;
+			case R.id.goHome:
+				break;
+			case R.id.login:
+				break;
+			case R.id.register:
+				break;
+			case R.id.forgetPassword:
+				break;
 		}
+	}
+
+	/**
+	 * 登录操作
+	 */
+	private void login() {
+		String strMobilePhone = mobilePhone.getText().toString();
+		String strPassword = password.getText().toString();
 	}
 }
