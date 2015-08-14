@@ -1,4 +1,4 @@
-package com.liuhui.ceremony.app.activity;
+package com.liuhui.ceremony.app.ui.activity;
 
 import android.content.Intent;
 import android.os.Handler;

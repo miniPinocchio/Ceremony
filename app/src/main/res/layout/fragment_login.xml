@@ -12,8 +12,8 @@
         android:layout_marginTop="30dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:weightSum="1">
 
         <TextView
@@ -42,8 +42,8 @@
         android:layout_marginTop="20dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:weightSum="1">
 
         <TextView
