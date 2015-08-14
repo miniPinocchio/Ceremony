@@ -8,6 +8,8 @@ import com.liuhui.ceremony.app.base.BaseActivity;
 
 /**
  * 启动界面
+ * <p/>
+ * Created by __Berial___
  */
 public class SplashActivity extends BaseActivity {
 

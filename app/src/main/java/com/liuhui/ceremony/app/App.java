@@ -4,6 +4,8 @@ import android.app.Application;
 
 /**
  * 应用App类
+ * <p/>
+ * Created by __Berial___
  */
 public class App extends Application {
 

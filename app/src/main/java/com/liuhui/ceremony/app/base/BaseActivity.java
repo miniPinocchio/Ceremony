@@ -9,6 +9,8 @@ import com.liuhui.ceremony.app.util.LogUtil;
 
 /**
  * Activity基类
+ * <p/>
+ * Created by __Berial___
  */
 public abstract class BaseActivity extends AppCompatActivity {
 

@@ -8,6 +8,8 @@ import java.util.LinkedList;
 
 /**
  * 应用程序Activity管理类：用于Activity管理和应用程序退出
+ * <p/>
+ * Created by __Berial___
  */
 public class AppManager {
 

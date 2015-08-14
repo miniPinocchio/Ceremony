@@ -14,6 +14,8 @@ import butterknife.OnClick;
 
 /**
  * 登陆界面
+ * <p/>
+ * Created by __Berial___
  */
 public class LoginActivity extends BaseActivity {
 
