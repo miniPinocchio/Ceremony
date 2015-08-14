@@ -18,4 +18,10 @@ public interface RequestParam {
 	 * 所用场景：登录、注册、安全设置
 	 */
 	String PASSWORD = "password";
+
+	/**
+	 * 短信验证码
+	 * 所用场景：注册
+	 */
+	String AUTH_CODE = "pincode";
 }

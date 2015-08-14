@@ -11,6 +11,13 @@
     <string name="login">登陆</string>
     <string name="register">注册</string>
     <string name="go_home">去看看</string>
+    <string name="get_auth_code">获取验证码</string>
+    <string name="auth_code">验证码</string>
+    <string name="input_register_mobile_phone">请输入手机号</string>
+    <string name="input_confirm_password">请再次输入密码</string>
+    <string name="input_auth_code">请输入6位短信密码</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="register_title">账号注册</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

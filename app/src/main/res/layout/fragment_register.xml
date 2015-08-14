@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/action_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:text="@string/mobile_phone"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@id/mobilePhone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:background="@drawable/shape_round_rect"
+            android:hint="@string/input_login_mobile_phone"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@id/getAuthCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:padding="10dp"
+        android:text="@string/get_auth_code"
+        android:textColor="@color/main_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:text="@string/password"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@id/password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:background="@drawable/shape_round_rect"
+            android:hint="@string/input_login_password"
+            android:inputType="textPassword"
+            android:maxLength="12"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:text="@string/confirm_password"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@id/confirmPassword"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:background="@drawable/shape_round_rect"
+            android:hint="@string/input_confirm_password"
+            android:inputType="textPassword"
+            android:maxLength="12"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:text="@string/auth_code"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@id/authCode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:background="@drawable/shape_round_rect"
+            android:hint="@string/input_auth_code"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_register_button"
+        android:gravity="center_horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="65dp"
+        android:paddingRight="65dp"
+        android:paddingTop="8dp"
+        android:text="@string/register"
+        android:textColor="@color/white"/>
+</LinearLayout>
