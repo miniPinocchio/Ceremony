@@ -5,9 +5,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.liuhui.ceremony.app.Api;
 import com.liuhui.ceremony.app.App;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
+import com.liuhui.ceremony.app.constant.RequestParam;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -64,6 +69,7 @@ public class LoginActivity extends BaseActivity {
 			case R.id.goHome:
 				break;
 			case R.id.login:
+				login();
 				break;
 			case R.id.register:
 				break;
@@ -80,15 +86,36 @@ public class LoginActivity extends BaseActivity {
 		String strPassword = password.getText().toString();
 
 		if(strMobilePhone.length() == 0) {
-
+			App.toast("未输入手机号");
 		} else if(strMobilePhone.length() < 11) {
-
+			App.toast("手机号未输入完整");
 		} else if(App.isMobilePhone(strMobilePhone)) {
-
+			App.toast("不存在此手机号");
 		} else if(strPassword.length() == 0) {
-
+			App.toast("未输入密码");
 		} else if(strPassword.length() < 6) {
-
+			App.toast("密码未输入完整");
 		}
+
+		RequestBody requestBody = new FormEncodingBuilder()
+				.add(RequestParam.MOBILE, strMobilePhone)
+				.add(RequestParam.PASSWORD, strPassword).build();
+
+		Request loginRequest = new Request.Builder()
+				.url(Api.LOGIN)
+				.post(requestBody)
+				.build();
+
+//		OkHttpUtil.enqueue(loginRequest, new Callback() {
+//			@Override
+//			public void onFailure(Request request, IOException e) {
+//				App.toast("登录失败，请重试");
+//			}
+//
+//			@Override
+//			public void onResponse(Response response) throws IOException {
+//				App.toast(response.body().string());
+//			}
+//		});
 	}
 }

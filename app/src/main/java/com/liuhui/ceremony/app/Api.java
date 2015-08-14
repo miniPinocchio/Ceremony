@@ -6,4 +6,9 @@ package com.liuhui.ceremony.app;
  * Created by __Berial___
  */
 public interface Api {
+
+	/**
+	 * 登录 POST
+	 */
+	String LOGIN = "http://xl.wx.21future.com/index.php?s=appapi&a=login";
 }
