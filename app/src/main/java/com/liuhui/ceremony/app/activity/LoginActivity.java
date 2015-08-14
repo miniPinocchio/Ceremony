@@ -33,7 +33,7 @@ public class LoginActivity extends BaseActivity {
 
 	@Override
 	protected void initViews() {
-		setContentView(R.layout.activity_login);
+		setContentView(R.layout.fragment_login);
 
 		ButterKnife.inject(this);
 

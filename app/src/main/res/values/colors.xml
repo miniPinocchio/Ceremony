@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="action_bar_background">#228fe0</color>
-    <color name="white">#fff</color>
 
     <!-- App主色 -->
     <color name="main_color">#228fe0</color>
