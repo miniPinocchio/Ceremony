@@ -1,6 +1,9 @@
 package com.liuhui.ceremony.app;
 
 import android.app.Application;
+import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
+import android.widget.Toast;
 
 /**
  * 应用App类
@@ -19,8 +22,23 @@ public class App extends Application {
 		instance = this;
 	}
 
-	public static App getInstance(){
+	public static App getInstance() {
 		return instance;
+	}
+
+
+	/**
+	 * toast
+	 */
+	public static void toast(@NonNull CharSequence text) {
+		Toast.makeText(instance, text, Toast.LENGTH_SHORT).show();
+	}
+
+	/**
+	 * toast
+	 */
+	public static void toast(@StringRes int stringRes) {
+		Toast.makeText(instance, stringRes, Toast.LENGTH_SHORT).show();
 	}
 
 	/**

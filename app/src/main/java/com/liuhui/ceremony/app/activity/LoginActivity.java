@@ -5,6 +5,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.liuhui.ceremony.app.App;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
 
@@ -77,5 +78,17 @@ public class LoginActivity extends BaseActivity {
 	private void login() {
 		String strMobilePhone = mobilePhone.getText().toString();
 		String strPassword = password.getText().toString();
+
+		if(strMobilePhone.length() == 0) {
+
+		} else if(strMobilePhone.length() < 11) {
+
+		} else if(App.isMobilePhone(strMobilePhone)) {
+
+		} else if(strPassword.length() == 0) {
+
+		} else if(strPassword.length() < 6) {
+
+		}
 	}
 }
