@@ -3,6 +3,8 @@ package com.liuhui.ceremony.app.base;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.liuhui.ceremony.app.AppManager;
+
 import butterknife.ButterKnife;
 
 /**
@@ -15,6 +17,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		initViews();
 		ButterKnife.inject(this);
+		AppManager.getAppManager().addActivity(this);
 	}
 
 	/**
@@ -45,5 +48,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
+		AppManager.getAppManager().finishActivity(this);
 	}
 }
