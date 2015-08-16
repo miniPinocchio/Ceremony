@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.liuhui.ceremony.app.AppManager;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
@@ -41,7 +40,7 @@ public class MainActivity extends BaseActivity {
             R.drawable.tab_personal_btn};
 
     //Tab选项卡的文字
-    private String mTextviewArray[] = {"首页", "消息", "好友", ""};
+    private String mTextviewArray[] = {"关系", "情理", "攻略", "我的"};
 
     @Override
     protected void initViews() {
@@ -100,4 +99,6 @@ public class MainActivity extends BaseActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+
 }

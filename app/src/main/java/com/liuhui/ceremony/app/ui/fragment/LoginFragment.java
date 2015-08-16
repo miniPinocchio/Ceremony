@@ -4,25 +4,20 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 import com.liuhui.ceremony.app.Api;
 import com.liuhui.ceremony.app.App;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
 import com.liuhui.ceremony.app.constant.RequestParam;
+import com.liuhui.ceremony.app.ui.activity.MainActivity;
 import com.liuhui.ceremony.app.util.LogUtil;
 import com.liuhui.ceremony.app.util.OkHttpUtil;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
+import com.squareup.okhttp.*;
 
 import java.io.IOException;
-
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.OnClick;
 
 
 /**
@@ -67,8 +62,10 @@ public class LoginFragment extends BaseActivity {
 			case R.id.actionBarRightText:
 				break;
 			case R.id.goHome:
+				startActivity(new Intent(this,MainActivity.class));
 				break;
 			case R.id.login:
+				startActivity(new Intent(this, MainActivity.class));
 				login();
 				break;
 			case R.id.register:
