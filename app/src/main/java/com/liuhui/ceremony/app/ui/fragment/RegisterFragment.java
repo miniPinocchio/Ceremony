@@ -93,12 +93,12 @@ public class RegisterFragment extends BaseActivity {
 				.add(RequestParam.MOBILE, strMobilePhone)
 				.build();
 
-		Request loginRequest = new Request.Builder()
+		Request getAuthCodeRequest = new Request.Builder()
 				.url(Api.GET_AUTH_CODE)
 				.post(requestBody)
 				.build();
 
-		OkHttpUtil.enqueue(loginRequest, new Callback() {
+		OkHttpUtil.enqueue(getAuthCodeRequest, new Callback() {
 			@Override
 			public void onFailure(Request request, IOException e) {
 				runOnUiThread(new Runnable() {
@@ -161,7 +161,7 @@ public class RegisterFragment extends BaseActivity {
 			return;
 		}
 
-		RequestBody requestBody = new FormEncodingBuilder()
+		final RequestBody requestBody = new FormEncodingBuilder()
 				.add(RequestParam.MOBILE, strMobilePhone)
 				.add(RequestParam.PASSWORD, strPassword)
 				.add(RequestParam.AUTH_CODE, strAuthCode)
@@ -187,7 +187,7 @@ public class RegisterFragment extends BaseActivity {
 			public void onResponse(Response response) throws IOException {
 				final ResponseBody responseBody = new Gson().fromJson(response.body().string(),
 						ResponseBody.class);
-				LogUtil.e(response.body().string());
+				LogUtil.e(requestBody.toString());
 				runOnUiThread(new Runnable() {
 					@Override
 					public void run() {

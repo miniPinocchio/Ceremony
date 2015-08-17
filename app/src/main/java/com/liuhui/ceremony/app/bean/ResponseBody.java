@@ -17,4 +17,12 @@ public class ResponseBody {
 	public String getStatus() { return status;}
 
 	public String getData() { return data;}
+
+	@Override
+	public String toString() {
+		return "ResponseBody{" +
+				"status='" + status + '\'' +
+				", data='" + data + '\'' +
+				'}';
+	}
 }

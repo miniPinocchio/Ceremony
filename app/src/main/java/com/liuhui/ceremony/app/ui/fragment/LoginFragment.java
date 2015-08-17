@@ -4,20 +4,28 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.OnClick;
+
+import com.google.gson.Gson;
 import com.liuhui.ceremony.app.Api;
 import com.liuhui.ceremony.app.App;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
+import com.liuhui.ceremony.app.bean.ResponseBody;
 import com.liuhui.ceremony.app.constant.RequestParam;
 import com.liuhui.ceremony.app.ui.activity.MainActivity;
 import com.liuhui.ceremony.app.util.LogUtil;
 import com.liuhui.ceremony.app.util.OkHttpUtil;
-import com.squareup.okhttp.*;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 
 /**
@@ -62,10 +70,9 @@ public class LoginFragment extends BaseActivity {
 			case R.id.actionBarRightText:
 				break;
 			case R.id.goHome:
-				startActivity(new Intent(this,MainActivity.class));
+				startActivity(new Intent(this, MainActivity.class));
 				break;
 			case R.id.login:
-				startActivity(new Intent(this, MainActivity.class));
 				login();
 				break;
 			case R.id.register:
@@ -80,8 +87,8 @@ public class LoginFragment extends BaseActivity {
 	 * 登录操作
 	 */
 	private void login() {
-		String strMobilePhone = mobilePhone.getText().toString();
-		String strPassword = password.getText().toString();
+		final String strMobilePhone = mobilePhone.getText().toString();
+		final String strPassword = password.getText().toString();
 
 		if(strMobilePhone.length() == 0) {
 			App.toast("未输入手机号");
@@ -100,26 +107,47 @@ public class LoginFragment extends BaseActivity {
 			return;
 		}
 
-		RequestBody requestBody = new FormEncodingBuilder()
+		//登陆
+		RequestBody loginRequestBody = new FormEncodingBuilder()
 				.add(RequestParam.MOBILE, strMobilePhone)
-				.add(RequestParam.PASSWORD, strPassword).build();
+				.add(RequestParam.PASSWORD, strPassword)
+				.build();
 
 		Request loginRequest = new Request.Builder()
 				.url(Api.LOGIN)
-				.post(requestBody)
+				.post(loginRequestBody)
 				.build();
 
 		OkHttpUtil.enqueue(loginRequest, new Callback() {
 			@Override
 			public void onFailure(Request request, IOException e) {
-				//				App.toast("登录失败，请重试");
-				LogUtil.e("登录失败，请重试");
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						App.toast("登录失败，请重试");
+					}
+				});
 			}
 
 			@Override
 			public void onResponse(Response response) throws IOException {
-				//				App.toast(response.body().string());
-				LogUtil.e(response.body().string());
+				final ResponseBody responseBody = new Gson().fromJson(response.body().string(),
+						ResponseBody.class);
+				LogUtil.e(responseBody.toString());
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						switch(responseBody.getStatus()) {
+							case "1":
+								startActivity(new Intent(LoginFragment.this, MainActivity.class));
+								finish();
+								break;
+							case "0":
+								App.toast("登录失败，请重试");
+								break;
+						}
+					}
+				});
 			}
 		});
 	}
