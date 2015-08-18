@@ -17,4 +17,7 @@
     <item name="authCode" type="id"/>
     <item name="getAuthCode" type="id"/>
 
+    <!-- forget password ui -->
+    <item name="confirm" type="id"/>
+    <item name="verifiedMobilePhone" type="id"/>
 </resources>

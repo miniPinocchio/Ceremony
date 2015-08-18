@@ -12,8 +12,8 @@
         android:layout_marginTop="30dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:weightSum="1">
 
         <TextView
@@ -26,12 +26,13 @@
         <EditText
             android:id="@id/mobilePhone"
             style="@style/textCursorDrawable"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.85"
             android:background="@drawable/shape_round_rect"
             android:hint="@string/input_login_mobile_phone"
             android:inputType="phone"
             android:maxLength="11"
-            android:padding="5dp"
-            />
+            android:padding="5dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -40,8 +41,8 @@
         android:layout_marginTop="20dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:weightSum="1">
 
         <TextView
@@ -54,12 +55,13 @@
         <EditText
             android:id="@id/password"
             style="@style/textCursorDrawable"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.85"
             android:background="@drawable/shape_round_rect"
             android:hint="@string/input_login_password"
             android:inputType="textPassword"
             android:maxLength="12"
-            android:padding="5dp"
-            />
+            android:padding="5dp"/>
     </LinearLayout>
 
     <TextView
@@ -77,6 +79,8 @@
         android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:weightSum="1">
 
         <TextView
@@ -84,7 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:layout_weight="0.45"
+            android:layout_weight="0.5"
             android:background="@drawable/shape_red_color_button"
             android:gravity="center_horizontal"
             android:padding="8dp"
@@ -96,7 +100,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_weight="0.45"
+            android:layout_weight="0.5"
             android:background="@drawable/shape_red_color_button"
             android:gravity="center_horizontal"
             android:padding="8dp"
@@ -111,10 +115,11 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:background="@drawable/shape_red_round_rect"
-        android:paddingBottom="10dp"
+        android:paddingBottom="8dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
-        android:paddingTop="10dp"
+        android:paddingTop="8dp"
         android:text="@string/go_home"
-        android:textColor="@color/main_color"/>
+        android:textColor="@color/main_color"
+        android:textSize="16sp"/>
 </LinearLayout>

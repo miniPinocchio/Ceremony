@@ -27,11 +27,11 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
- * 注册界面
+ * 忘记密码界面
  * <p/>
- * Created by berial on 15/8/14.
+ * Created by berial on 15/8/18.
  */
-public class RegisterActivity extends BaseActivity {
+public class ForgetPasswordActivity extends BaseActivity {
 
 	@InjectView(R.id.mobilePhone)
 	EditText mobilePhone;
@@ -45,29 +45,30 @@ public class RegisterActivity extends BaseActivity {
 	@InjectView(R.id.authCode)
 	EditText authCode;
 
+	@InjectView(R.id.verifiedMobilePhone)
+	TextView verifiedMobilePhone;
+
 	private String strAuthCode;
 
 	@Override
 	protected void initViews() {
-		setContentView(R.layout.activity_register);
+		setContentView(R.layout.activity_forget_password);
 		ButterKnife.inject(this);
-		((TextView)ButterKnife.findById(this, R.id.actionBarTitle)).setText(R.string.register_title);
+		((TextView) ButterKnife.findById(this, R.id.actionBarTitle))
+				.setText(R.string.forget_password_title);
 	}
 
-	/**
-	 * 设置按钮的点击事件
-	 */
-	@OnClick(value = { R.id.back, R.id.register, R.id.getAuthCode })
-	void setClickEvent(View v) {
-		switch(v.getId()) {
+	@OnClick(value = { R.id.back, R.id.getAuthCode, R.id.confirm })
+	void setClickEvent(View view) {
+		switch(view.getId()) {
 			case R.id.back:
 				finish();
 				break;
-			case R.id.register:
-				register();
-				break;
 			case R.id.getAuthCode:
 				getAuthCode();
+				break;
+			case R.id.confirm:
+				changePassword();
 				break;
 		}
 	}
@@ -76,7 +77,7 @@ public class RegisterActivity extends BaseActivity {
 	 * 获取短信验证码操作
 	 */
 	private void getAuthCode() {
-		String strMobilePhone = mobilePhone.getText().toString();
+		final String strMobilePhone = mobilePhone.getText().toString();
 		if(strMobilePhone.length() == 0) {
 			App.toast("未输入手机号");
 			return;
@@ -119,6 +120,7 @@ public class RegisterActivity extends BaseActivity {
 					public void run() {
 						App.toast(strAuthCode);
 						authCode.setText(strAuthCode);
+						verifiedMobilePhone.setText("已验证手机：" + strMobilePhone);
 					}
 				});
 			}
@@ -126,9 +128,9 @@ public class RegisterActivity extends BaseActivity {
 	}
 
 	/**
-	 * 注册操作
+	 * 修改密码操作
 	 */
-	private void register() {
+	private void changePassword() {
 		String strMobilePhone = mobilePhone.getText().toString();
 		String strPassword = password.getText().toString();
 		String strConfirmPassword = confirmPassword.getText().toString();
@@ -177,7 +179,7 @@ public class RegisterActivity extends BaseActivity {
 				runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						App.toast("注册失败，请重试");
+						App.toast("修改密码失败，请重试");
 					}
 				});
 			}
@@ -192,11 +194,11 @@ public class RegisterActivity extends BaseActivity {
 					public void run() {
 						switch(responseBody.getStatus()) {
 							case "1":
-								App.toast("注册成功");
+								App.toast("修改密码成功");
 								finish();
 								break;
 							case "0":
-								App.toast("注册失败，请重试");
+								App.toast("修改密码失败，请重试");
 								break;
 						}
 					}

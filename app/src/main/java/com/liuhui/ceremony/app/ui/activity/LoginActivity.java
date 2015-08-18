@@ -69,6 +69,7 @@ public class LoginActivity extends BaseActivity {
 				startActivity(new Intent(this, RegisterActivity.class));
 				break;
 			case R.id.forgetPassword:
+				startActivity(new Intent(this, ForgetPasswordActivity.class));
 				break;
 		}
 	}

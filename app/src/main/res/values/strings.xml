@@ -19,6 +19,8 @@
     <string name="confirm_password">确认密码</string>
     <string name="register_title">账号注册</string>
     <string name="me">我</string>
+    <string name="forget_password_title">忘记密码</string>
+    <string name="confirm">确定</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
