@@ -1,4 +1,4 @@
-package com.liuhui.ceremony.app.ui.fragment;
+package com.liuhui.ceremony.app.ui.activity;
 
 import android.content.Intent;
 import android.view.View;
@@ -12,7 +12,6 @@ import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
 import com.liuhui.ceremony.app.bean.ResponseBody;
 import com.liuhui.ceremony.app.constant.RequestParam;
-import com.liuhui.ceremony.app.ui.activity.MainActivity;
 import com.liuhui.ceremony.app.util.LogUtil;
 import com.liuhui.ceremony.app.util.OkHttpUtil;
 import com.squareup.okhttp.Callback;
@@ -33,7 +32,7 @@ import butterknife.OnClick;
  * <p/>
  * Created by __Berial___
  */
-public class LoginFragment extends BaseActivity {
+public class LoginActivity extends BaseActivity {
 
 	@InjectView(R.id.actionBarTitle)
 	TextView title;
@@ -49,7 +48,7 @@ public class LoginFragment extends BaseActivity {
 
 	@Override
 	protected void initViews() {
-		setContentView(R.layout.fragment_login);
+		setContentView(R.layout.activity_login);
 
 		ButterKnife.inject(this);
 
@@ -76,7 +75,7 @@ public class LoginFragment extends BaseActivity {
 				login();
 				break;
 			case R.id.register:
-				startActivity(new Intent(this, RegisterFragment.class));
+				startActivity(new Intent(this, RegisterActivity.class));
 				break;
 			case R.id.forgetPassword:
 				break;
@@ -139,7 +138,7 @@ public class LoginFragment extends BaseActivity {
 					public void run() {
 						switch(responseBody.getStatus()) {
 							case "1":
-								startActivity(new Intent(LoginFragment.this, MainActivity.class));
+								startActivity(new Intent(LoginActivity.this, MainActivity.class));
 								finish();
 								break;
 							case "0":

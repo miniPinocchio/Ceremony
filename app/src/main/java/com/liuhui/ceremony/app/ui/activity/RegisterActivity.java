@@ -1,4 +1,4 @@
-package com.liuhui.ceremony.app.ui.fragment;
+package com.liuhui.ceremony.app.ui.activity;
 
 import android.view.View;
 import android.widget.EditText;
@@ -31,7 +31,7 @@ import butterknife.OnClick;
  * <p/>
  * Created by berial on 15/8/14.
  */
-public class RegisterFragment extends BaseActivity {
+public class RegisterActivity extends BaseActivity {
 
 	@InjectView(R.id.mobilePhone)
 	EditText mobilePhone;
@@ -49,7 +49,7 @@ public class RegisterFragment extends BaseActivity {
 
 	@Override
 	protected void initViews() {
-		setContentView(R.layout.fragment_register);
+		setContentView(R.layout.activity_register);
 		ButterKnife.inject(this);
 		TextView title = ButterKnife.findById(this, R.id.actionBarTitle);
 		title.setText(R.string.register_title);
