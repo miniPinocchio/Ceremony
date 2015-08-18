@@ -6,15 +6,17 @@
     <color name="forget_password_color">#f27b33</color>
     <color name="login_button_color">#188de4</color>
     <color name="register_button_color">#df6d1f</color>
+    <color name="split_color">#d5d5d5</color>
 
     <color name="colorPrimary">#d81a3a</color>
     <color name="colorPrimaryDark">#b60818</color>
     <color name="textColor">#333333</color>
 
     <!-- 常用颜色值 -->
-    <color name="white40">#40FFFFFF</color>
+    <color name="white40">#e8e7ec</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="blackaa">#aa000000</color>
     <color name="gray">#808080</color>
     <color name="red">#FF0000</color>
     <color name="gold">#FFD700</color>

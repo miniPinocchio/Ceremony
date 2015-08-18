@@ -20,7 +20,7 @@ public class PersonalFragment extends BaseFragment {
 	public View initView(LayoutInflater inflater, ViewGroup container) {
 		View view = inflater.inflate(R.layout.fragment_personal, container, false);
 		ButterKnife.findById(view, R.id.back).setVisibility(View.GONE);
-		((TextView)ButterKnife.findById(view, R.id.actionBarTitle)).setText(R.string.me);
+		((TextView) ButterKnife.findById(view, R.id.actionBarTitle)).setText(R.string.me);
 		return view;
 	}
 

@@ -1,10 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <include layout="@layout/action_bar"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="10dp">
 
+        <com.liuhui.ceremony.app.ui.customview.roundedimageview.RoundedImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/default_avatar"
+            app:riv_corner_radius="50dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:drawableRight="@mipmap/icon_next"
+            android:textColor="@color/blackaa"/>
+    </LinearLayout>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:drawableLeft="@mipmap/icon_grade_record"
+        android:drawablePadding="15dp"
+        android:drawableRight="@mipmap/icon_next"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="10dp"
+        android:text="打分记录"
+        android:textColor="@color/blackaa"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:drawableLeft="@mipmap/icon_grade_record"
+        android:drawablePadding="15dp"
+        android:drawableRight="@mipmap/icon_next"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="10dp"
+        android:text="打分记录"
+        android:textColor="@color/blackaa"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:drawableLeft="@mipmap/icon_grade_record"
+        android:drawablePadding="15dp"
+        android:drawableRight="@mipmap/icon_next"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="10dp"
+        android:text="打分记录"
+        android:textColor="@color/blackaa"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:drawableLeft="@mipmap/icon_grade_record"
+        android:drawablePadding="15dp"
+        android:drawableRight="@mipmap/icon_next"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="10dp"
+        android:text="打分记录"
+        android:textColor="@color/blackaa"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:drawableLeft="@mipmap/icon_grade_record"
+        android:drawablePadding="15dp"
+        android:drawableRight="@mipmap/icon_next"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="10dp"
+        android:text="打分记录"
+        android:textColor="@color/blackaa"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:drawableLeft="@mipmap/icon_grade_record"
+        android:drawablePadding="15dp"
+        android:drawableRight="@mipmap/icon_next"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="10dp"
+        android:text="打分记录"
+        android:textColor="@color/blackaa"/>
+
+    <include layout="@layout/split"/>
 </LinearLayout>
