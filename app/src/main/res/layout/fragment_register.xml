@@ -25,15 +25,13 @@
 
         <EditText
             android:id="@id/mobilePhone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.8"
+            style="@style/textCursorDrawable"
             android:background="@drawable/shape_round_rect"
             android:hint="@string/input_login_mobile_phone"
             android:inputType="phone"
             android:maxLength="11"
             android:padding="5dp"
-            android:textSize="14sp"/>
+            />
     </LinearLayout>
 
     <TextView
@@ -64,15 +62,13 @@
 
         <EditText
             android:id="@id/password"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.8"
+            style="@style/textCursorDrawable"
             android:background="@drawable/shape_round_rect"
             android:hint="@string/input_login_password"
             android:inputType="textPassword"
             android:maxLength="12"
             android:padding="5dp"
-            android:textSize="14sp"/>
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -94,15 +90,13 @@
 
         <EditText
             android:id="@id/confirmPassword"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.8"
+            style="@style/textCursorDrawable"
             android:background="@drawable/shape_round_rect"
             android:hint="@string/input_confirm_password"
             android:inputType="textPassword"
             android:maxLength="12"
             android:padding="5dp"
-            android:textSize="14sp"/>
+           />
     </LinearLayout>
 
     <LinearLayout
@@ -124,15 +118,13 @@
 
         <EditText
             android:id="@id/authCode"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.8"
+            style="@style/textCursorDrawable"
             android:background="@drawable/shape_round_rect"
             android:hint="@string/input_auth_code"
             android:inputType="number"
             android:maxLength="6"
             android:padding="5dp"
-            android:textSize="14sp"/>
+            />
     </LinearLayout>
 
     <TextView
