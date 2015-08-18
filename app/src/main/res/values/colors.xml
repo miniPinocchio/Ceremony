@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App主色 -->
-    <color name="main_color">#228fe0</color>
+    <color name="main_color">#d81a3a</color>
     <color name="window_background">#f2f2f2</color>
     <color name="forget_password_color">#f27b33</color>
     <color name="login_button_color">#188de4</color>
     <color name="register_button_color">#df6d1f</color>
 
-    <color name="colorPrimary">#228fe0</color>
-    <color name="colorPrimaryDark">#0277bd</color>
+    <color name="colorPrimary">#d81a3a</color>
+    <color name="colorPrimaryDark">#b60818</color>
     <color name="textColor">#333333</color>
 
     <!-- 常用颜色值 -->
