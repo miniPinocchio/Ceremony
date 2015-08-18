@@ -37,9 +37,6 @@ public class LoginActivity extends BaseActivity {
 	@InjectView(R.id.actionBarTitle)
 	TextView title;
 
-	@InjectView(R.id.actionBarRightText)
-	TextView rightText;
-
 	@InjectView(R.id.mobilePhone)
 	EditText mobilePhone;
 
@@ -52,22 +49,16 @@ public class LoginActivity extends BaseActivity {
 
 		ButterKnife.inject(this);
 
+		ButterKnife.findById(this, R.id.back).setVisibility(View.GONE);
 		title.setText(R.string.login_title);
-		rightText.setText(R.string.cancel);
 	}
 
 	/**
 	 * 设置按钮的点击事件
 	 */
-	@OnClick(value = { R.id.back, R.id.actionBarRightText, R.id.goHome,
-			R.id.login, R.id.register, R.id.forgetPassword })
+	@OnClick(value = { R.id.goHome, R.id.login, R.id.register, R.id.forgetPassword })
 	void setClickEvent(View v) {
 		switch(v.getId()) {
-			case R.id.back:
-				finish();
-				break;
-			case R.id.actionBarRightText:
-				break;
 			case R.id.goHome:
 				startActivity(new Intent(this, MainActivity.class));
 				break;
