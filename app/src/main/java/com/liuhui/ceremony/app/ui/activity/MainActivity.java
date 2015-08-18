@@ -39,8 +39,13 @@ public class MainActivity extends BaseActivity {
             R.drawable.tab_gift_btn, R.drawable.tab_discover_btn,
             R.drawable.tab_personal_btn};
 
+    //定义数组来存放文字颜色
+    private int mTextColorArray[] = {R.drawable.tab_reationship_text_color,
+            R.drawable.tab_gift_text_color, R.drawable.tab_discover_text_color,
+            R.drawable.tab_personal_text_color};
+
     //Tab选项卡的文字
-    private String mTextviewArray[] = {"关系", "情理", "攻略", "我的"};
+    private String mTextviewArray[] = {"关系", "情礼", "攻略", "我的"};
 
     @Override
     protected void initViews() {
@@ -78,6 +83,7 @@ public class MainActivity extends BaseActivity {
 
         TextView textView = (TextView) view.findViewById(R.id.textview);
         textView.setText(mTextviewArray[index]);
+        textView.setTextColor(getResources().getColor(mTextColorArray[index]));
 
         return view;
     }
