@@ -56,7 +56,7 @@ public class LoginActivity extends BaseActivity {
 	/**
 	 * 设置按钮的点击事件
 	 */
-	@OnClick(value = { R.id.goHome, R.id.login, R.id.register, R.id.forgetPassword })
+	@OnClick({ R.id.goHome, R.id.login, R.id.register, R.id.forgetPassword })
 	void setClickEvent(View v) {
 		switch(v.getId()) {
 			case R.id.goHome:

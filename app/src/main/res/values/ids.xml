@@ -20,4 +20,20 @@
     <!-- forget password ui -->
     <item name="confirm" type="id"/>
     <item name="verifiedMobilePhone" type="id"/>
+
+    <!-- personal ui -->
+    <item name="avatar" type="id"/>
+    <item name="nickname" type="id"/>
+    <item name="userInfo" type="id"/>
+    <item name="gradeRecord" type="id"/>
+    <item name="impressionRecord" type="id"/>
+    <item name="myStory" type="id"/>
+    <item name="myFavorite" type="id"/>
+    <item name="setting" type="id"/>
+
+    <!-- setting ui -->
+    <item name="securitySetting" type="id"/>
+    <item name="noticeSetting" type="id"/>
+    <item name="logOut" type="id"/>
+
 </resources>

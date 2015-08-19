@@ -58,7 +58,7 @@ public class ForgetPasswordActivity extends BaseActivity {
 				.setText(R.string.forget_password_title);
 	}
 
-	@OnClick(value = { R.id.back, R.id.getAuthCode, R.id.confirm })
+	@OnClick({ R.id.back, R.id.getAuthCode, R.id.confirm })
 	void setClickEvent(View view) {
 		switch(view.getId()) {
 			case R.id.back:

@@ -21,6 +21,15 @@
     <string name="me">我</string>
     <string name="forget_password_title">忘记密码</string>
     <string name="confirm">确定</string>
+    <string name="grade_record">打分记录</string>
+    <string name="impression_record">印象记录</string>
+    <string name="my_favorite">我的收藏</string>
+    <string name="my_story">我的故事</string>
+    <string name="setting">设置</string>
+    <string name="security_setting">安全设置</string>
+    <string name="notice_setting">通知设置</string>
+    <string name="log_out">退出登录</string>
+
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

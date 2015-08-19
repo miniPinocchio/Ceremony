@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/action_bar"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/securitySetting"
+        style="@style/personalUiButton"
+        android:text="@string/security_setting"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/noticeSetting"
+        style="@style/personalUiButton"
+        android:text="@string/notice_setting"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/logOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_red_color_button"
+        android:gravity="center_horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/log_out"
+        android:textColor="@color/white"/>
+</LinearLayout>

@@ -7,23 +7,32 @@
 
     <include layout="@layout/action_bar"/>
 
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
     <LinearLayout
+        android:id="@id/userInfo"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="15dp"
         android:background="@color/white"
+        android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="16dp"
         android:paddingRight="10dp">
 
         <com.liuhui.ceremony.app.ui.customview.roundedimageview.RoundedImageView
+            android:id="@id/avatar"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@mipmap/default_avatar"
             app:riv_corner_radius="50dp"/>
 
         <TextView
+            android:id="@id/nickname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -40,17 +49,10 @@
     <include layout="@layout/split"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/white"
+        android:id="@id/gradeRecord"
+        style="@style/personalUiButton"
         android:drawableLeft="@mipmap/icon_grade_record"
-        android:drawablePadding="15dp"
-        android:drawableRight="@mipmap/icon_next"
-        android:gravity="center_vertical"
-        android:paddingLeft="25dp"
-        android:paddingRight="10dp"
-        android:text="打分记录"
-        android:textColor="@color/blackaa"/>
+        android:text="@string/grade_record"/>
 
     <include layout="@layout/split"/>
 
@@ -61,17 +63,10 @@
     <include layout="@layout/split"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/white"
-        android:drawableLeft="@mipmap/icon_grade_record"
-        android:drawablePadding="15dp"
-        android:drawableRight="@mipmap/icon_next"
-        android:gravity="center_vertical"
-        android:paddingLeft="25dp"
-        android:paddingRight="10dp"
-        android:text="打分记录"
-        android:textColor="@color/blackaa"/>
+        android:id="@id/impressionRecord"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_impression_record"
+        android:text="@string/impression_record"/>
 
     <include layout="@layout/split"/>
 
@@ -82,17 +77,10 @@
     <include layout="@layout/split"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/white"
-        android:drawableLeft="@mipmap/icon_grade_record"
-        android:drawablePadding="15dp"
-        android:drawableRight="@mipmap/icon_next"
-        android:gravity="center_vertical"
-        android:paddingLeft="25dp"
-        android:paddingRight="10dp"
-        android:text="打分记录"
-        android:textColor="@color/blackaa"/>
+        android:id="@id/myStory"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_my_story"
+        android:text="@string/my_story"/>
 
     <include layout="@layout/split"/>
 
@@ -103,17 +91,10 @@
     <include layout="@layout/split"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/white"
-        android:drawableLeft="@mipmap/icon_grade_record"
-        android:drawablePadding="15dp"
-        android:drawableRight="@mipmap/icon_next"
-        android:gravity="center_vertical"
-        android:paddingLeft="25dp"
-        android:paddingRight="10dp"
-        android:text="打分记录"
-        android:textColor="@color/blackaa"/>
+        android:id="@id/myFavorite"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_my_favorite"
+        android:text="@string/my_favorite"/>
 
     <include layout="@layout/split"/>
 
@@ -124,38 +105,10 @@
     <include layout="@layout/split"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/white"
-        android:drawableLeft="@mipmap/icon_grade_record"
-        android:drawablePadding="15dp"
-        android:drawableRight="@mipmap/icon_next"
-        android:gravity="center_vertical"
-        android:paddingLeft="25dp"
-        android:paddingRight="10dp"
-        android:text="打分记录"
-        android:textColor="@color/blackaa"/>
-
-    <include layout="@layout/split"/>
-
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="15dp"/>
-
-    <include layout="@layout/split"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/white"
-        android:drawableLeft="@mipmap/icon_grade_record"
-        android:drawablePadding="15dp"
-        android:drawableRight="@mipmap/icon_next"
-        android:gravity="center_vertical"
-        android:paddingLeft="25dp"
-        android:paddingRight="10dp"
-        android:text="打分记录"
-        android:textColor="@color/blackaa"/>
+        android:id="@id/setting"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_setting"
+        android:text="@string/setting"/>
 
     <include layout="@layout/split"/>
 </LinearLayout>

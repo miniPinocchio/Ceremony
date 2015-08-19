@@ -57,7 +57,7 @@ public class RegisterActivity extends BaseActivity {
 	/**
 	 * 设置按钮的点击事件
 	 */
-	@OnClick(value = { R.id.back, R.id.register, R.id.getAuthCode })
+	@OnClick({ R.id.back, R.id.register, R.id.getAuthCode })
 	void setClickEvent(View v) {
 		switch(v.getId()) {
 			case R.id.back:
