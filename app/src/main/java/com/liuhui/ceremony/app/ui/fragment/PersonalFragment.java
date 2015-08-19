@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.liuhui.ceremony.app.R;
-import com.liuhui.ceremony.app.base.BaseFragment;
+import com.liuhui.ceremony.app.base.BaseHomeFragment;
 import com.liuhui.ceremony.app.util.LogUtil;
 
 import butterknife.ButterKnife;
@@ -15,10 +15,13 @@ import butterknife.ButterKnife;
  * "我的"选项卡
  * Created by anany on 15/8/14.
  */
-public class PersonalFragment extends BaseFragment {
+public class PersonalFragment extends BaseHomeFragment {
 
 	@Override
 	public View initView(LayoutInflater inflater, ViewGroup container) {
+
+		LogUtil.e("PersonalFragment initView");
+
 		View view = inflater.inflate(R.layout.fragment_personal, container, false);
 		ButterKnife.findById(view, R.id.back).setVisibility(View.GONE);
 		((TextView) ButterKnife.findById(view, R.id.actionBarTitle)).setText(R.string.me);

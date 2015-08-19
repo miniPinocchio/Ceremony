@@ -1,0 +1,32 @@
+package com.liuhui.ceremony.app.ui.fragment.lovergift;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.liuhui.ceremony.app.R;
+import com.liuhui.ceremony.app.base.BaseGiftContentFragment;
+
+import butterknife.ButterKnife;
+
+/**
+ * 方案Fragment
+ * Created by anany on 15/8/19.
+ */
+public class ContentStoryFragment extends BaseGiftContentFragment {
+
+//    @InjectView(R.id.fl_gift_scheme_content)
+//    public FrameLayout fl_gift_scheme_content;
+
+    @Override
+    public View initView(LayoutInflater inflater, ViewGroup container) {
+        View view = inflater.inflate(R.layout.gift_fragment_content_scheme,null);
+        ButterKnife.inject(view);
+        return view;
+    }
+
+    @Override
+    public void initData() {
+
+    }
+}
