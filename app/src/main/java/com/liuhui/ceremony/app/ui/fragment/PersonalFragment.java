@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseFragment;
+import com.liuhui.ceremony.app.util.LogUtil;
 
 import butterknife.ButterKnife;
 
@@ -26,6 +27,6 @@ public class PersonalFragment extends BaseFragment {
 
 	@Override
 	public void initData() {
-
+		LogUtil.e("PersonalFragment initData ---");
 	}
 }

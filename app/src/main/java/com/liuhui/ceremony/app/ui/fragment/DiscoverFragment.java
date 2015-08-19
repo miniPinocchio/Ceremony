@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseFragment;
+import com.liuhui.ceremony.app.util.LogUtil;
 
 /**
  * Created by anany on 15/8/14.
@@ -20,6 +21,6 @@ public class DiscoverFragment  extends BaseFragment{
 
     @Override
     public void initData() {
-
+        LogUtil.e("DiscoverFragment initData ---");
     }
 }

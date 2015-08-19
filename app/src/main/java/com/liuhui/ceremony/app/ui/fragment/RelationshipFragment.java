@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.adapter.ListFriendsViewpagerAdapter;
 import com.liuhui.ceremony.app.base.BaseFragment;
+import com.liuhui.ceremony.app.util.LogUtil;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -58,7 +59,7 @@ public class RelationshipFragment extends BaseFragment implements ViewPager.OnPa
 
     @Override
     public void initData() {
-
+        LogUtil.e("RelationshipFragment initData ---");
     }
 
     @Override

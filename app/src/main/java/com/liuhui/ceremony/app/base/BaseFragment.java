@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.liuhui.ceremony.app.util.LogUtil;
+
 import butterknife.ButterKnife;
 
 /**
@@ -45,6 +47,7 @@ public abstract class BaseFragment extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
+		LogUtil.e("BaseFragment onResume ---");
 		if(isVisible) {
 			initData();
 		}
