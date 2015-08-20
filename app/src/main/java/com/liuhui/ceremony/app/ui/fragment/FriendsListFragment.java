@@ -11,13 +11,14 @@ package com.liuhui.ceremony.app.ui.fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.liuhui.ceremony.app.R;
-import com.liuhui.ceremony.app.base.BaseFragment;
+import com.liuhui.ceremony.app.base.BaseContactsFragment;
 
 /**
  * 关系界面 好友列表
  */
-public class FriendsListFragment extends BaseFragment {
+public class FriendsListFragment extends BaseContactsFragment {
 
 
     @Override
@@ -30,7 +31,6 @@ public class FriendsListFragment extends BaseFragment {
 
     @Override
     public void initData() {
-
 
     }
 }

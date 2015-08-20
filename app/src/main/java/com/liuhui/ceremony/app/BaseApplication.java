@@ -11,19 +11,21 @@ import android.widget.Toast;
  * <p/>
  * Created by __Berial___
  */
-public class App extends Application {
+public class BaseApplication extends Application {
 
-	private static Context instance;
+	private static BaseApplication instance;
 
 	private static String FIRST_OPEN_APP = "first_open_app.pref";
+	public static Context context;
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		instance = this;
+		context = getApplicationContext();
 	}
 
-	public static Context getInstance() {
+	public static BaseApplication getInstance() {
 		return instance;
 	}
 

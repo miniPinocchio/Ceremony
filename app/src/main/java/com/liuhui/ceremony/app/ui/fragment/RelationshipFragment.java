@@ -8,9 +8,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.adapter.ListFriendsViewpagerAdapter;
-import com.liuhui.ceremony.app.base.BaseFragment;
+import com.liuhui.ceremony.app.base.BaseHomeFragment;
 import com.liuhui.ceremony.app.util.LogUtil;
 
 import java.util.LinkedList;
@@ -19,13 +20,16 @@ import java.util.List;
 /**
  * Created by anany on 15/8/14.
  */
-public class RelationshipFragment extends BaseFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener {
+public class RelationshipFragment extends BaseHomeFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener {
 
     private RadioGroup listGroup;
     private ViewPager viewpager;
 
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container) {
+
+        LogUtil.e("RelationshipFragment initView");
+
         //TODO 关系图
         View view = inflater.inflate(R.layout.fragment_relationship, container, false);
         Button contacts = (Button) view.findViewById(R.id.relationship_contacts);

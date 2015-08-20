@@ -15,9 +15,10 @@ import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.adapter.ListFriendAdapter;
-import com.liuhui.ceremony.app.base.BaseFragment;
+import com.liuhui.ceremony.app.base.BaseContactsFragment;
 import com.liuhui.ceremony.app.ui.customview.MyLetterListView;
 
 import java.util.ArrayList;
@@ -35,7 +36,8 @@ import java.util.List;
 /**
  * 关系界面 分组列表
  */
-public class GroupListFragment extends BaseFragment {
+public class GroupListFragment extends BaseContactsFragment {
+
     private BaseAdapter adapter;
     private ListView personList;
     private TextView overlay;
