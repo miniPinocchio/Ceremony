@@ -5,20 +5,25 @@ package com.liuhui.ceremony.app;
  * <p/>
  * Created by __Berial___
  */
-public interface Api {
+public class Api {
+
+	/**
+	 * 基础请求地址
+	 */
+	public static String BASEURL = "http://xl.wx.21future.com";
 
 	/**
 	 * 登录 POST
 	 */
-	String LOGIN = "http://xl.wx.21future.com/index.php?s=appapi&a=login";
+	public static String LOGIN = "http://xl.wx.21future.com/index.php?s=appapi&a=login";
 
 	/**
 	 * 获取短信验证码 POST
 	 */
-	String GET_AUTH_CODE = "http://xl.wx.21future.com/index.php?s=appapi&a=pin";
+	public static String GET_AUTH_CODE = "http://xl.wx.21future.com/index.php?s=appapi&a=pin";
 
 	/**
 	 * 注册 POST
 	 */
-	String REGISTER = "http://xl.wx.21future.com/index.php?s=appapi&a=reg";
+	public static String REGISTER = "http://xl.wx.21future.com/index.php?s=appapi&a=reg";
 }

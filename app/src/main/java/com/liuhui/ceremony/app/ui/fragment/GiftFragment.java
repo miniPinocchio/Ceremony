@@ -36,9 +36,9 @@ public class GiftFragment extends BaseHomeFragment {
 
     private FragmentTransaction transaction;
 
-    private ContentSchemeFragment contentSchemeFragment;
+    private ContentSchemeFragment contentSchemeFragment;//方案fragment
 
-    private ContentStoryFragment contentStoryFragment;
+    private ContentStoryFragment contentStoryFragment;//故事fragment
 
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container) {

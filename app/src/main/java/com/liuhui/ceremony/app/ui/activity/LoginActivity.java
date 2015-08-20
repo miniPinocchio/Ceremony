@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.liuhui.ceremony.app.Api;
-import com.liuhui.ceremony.app.App;
+import com.liuhui.ceremony.app.BaseApplication;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
 import com.liuhui.ceremony.app.bean.ResponseBody;
@@ -82,19 +82,19 @@ public class LoginActivity extends BaseActivity {
 		final String strPassword = password.getText().toString();
 
 		if(strMobilePhone.length() == 0) {
-			App.toast("未输入手机号");
+			BaseApplication.toast("未输入手机号");
 			return;
 		} else if(strMobilePhone.length() < 11) {
-			App.toast("手机号未输入完整");
+			BaseApplication.toast("手机号未输入完整");
 			return;
-		} else if(!App.isMobilePhone(strMobilePhone)) {
-			App.toast("不存在此手机号");
+		} else if(!BaseApplication.isMobilePhone(strMobilePhone)) {
+			BaseApplication.toast("不存在此手机号");
 			return;
 		} else if(strPassword.length() == 0) {
-			App.toast("未输入密码");
+			BaseApplication.toast("未输入密码");
 			return;
 		} else if(strPassword.length() < 6) {
-			App.toast("密码未输入完整");
+			BaseApplication.toast("密码未输入完整");
 			return;
 		}
 
@@ -115,7 +115,7 @@ public class LoginActivity extends BaseActivity {
 				runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						App.toast("登录失败，请重试");
+						BaseApplication.toast("登录失败，请重试");
 					}
 				});
 			}
@@ -134,7 +134,7 @@ public class LoginActivity extends BaseActivity {
 								finish();
 								break;
 							case "0":
-								App.toast("登录失败，请重试");
+								BaseApplication.toast("登录失败，请重试");
 								break;
 						}
 					}

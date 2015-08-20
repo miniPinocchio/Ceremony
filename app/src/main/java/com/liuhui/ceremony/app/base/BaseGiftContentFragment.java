@@ -57,7 +57,7 @@ public abstract class BaseGiftContentFragment extends Fragment {
         super.onResume();
         LogUtil.e("BaseFragment onResume ---");
 
-
+        initData();
     }
 
     /**

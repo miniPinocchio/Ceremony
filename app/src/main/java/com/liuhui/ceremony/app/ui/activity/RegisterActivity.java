@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.liuhui.ceremony.app.Api;
-import com.liuhui.ceremony.app.App;
+import com.liuhui.ceremony.app.BaseApplication;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
 import com.liuhui.ceremony.app.bean.AuthCode;
@@ -78,13 +78,13 @@ public class RegisterActivity extends BaseActivity {
 	private void getAuthCode() {
 		String strMobilePhone = mobilePhone.getText().toString();
 		if(strMobilePhone.length() == 0) {
-			App.toast("未输入手机号");
+			BaseApplication.toast("未输入手机号");
 			return;
 		} else if(strMobilePhone.length() < 11) {
-			App.toast("手机号未输入完整");
+			BaseApplication.toast("手机号未输入完整");
 			return;
-		} else if(!App.isMobilePhone(strMobilePhone)) {
-			App.toast("不存在此手机号");
+		} else if(!BaseApplication.isMobilePhone(strMobilePhone)) {
+			BaseApplication.toast("不存在此手机号");
 			return;
 		}
 
@@ -103,7 +103,7 @@ public class RegisterActivity extends BaseActivity {
 				runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						App.toast("获取验证码失败，请重试");
+						BaseApplication.toast("获取验证码失败，请重试");
 					}
 				});
 			}
@@ -117,7 +117,7 @@ public class RegisterActivity extends BaseActivity {
 
 					@Override
 					public void run() {
-						App.toast(strAuthCode);
+						BaseApplication.toast(strAuthCode);
 						authCode.setText(strAuthCode);
 					}
 				});
@@ -135,28 +135,28 @@ public class RegisterActivity extends BaseActivity {
 		String strAuthCode = authCode.getText().toString();
 
 		if(strMobilePhone.length() == 0) {
-			App.toast("未输入手机号");
+			BaseApplication.toast("未输入手机号");
 			return;
 		} else if(strMobilePhone.length() < 11) {
-			App.toast("手机号未输入完整");
+			BaseApplication.toast("手机号未输入完整");
 			return;
-		} else if(!App.isMobilePhone(strMobilePhone)) {
-			App.toast("不存在此手机号");
+		} else if(!BaseApplication.isMobilePhone(strMobilePhone)) {
+			BaseApplication.toast("不存在此手机号");
 			return;
 		} else if(strPassword.length() == 0 || strConfirmPassword.length() == 0) {
-			App.toast("未输入密码");
+			BaseApplication.toast("未输入密码");
 			return;
 		} else if(strPassword.length() < 6 || strConfirmPassword.length() == 0) {
-			App.toast("密码未输入完整");
+			BaseApplication.toast("密码未输入完整");
 			return;
 		} else if(!strPassword.equals(strConfirmPassword)) {
-			App.toast("两次输入的密码不一致");
+			BaseApplication.toast("两次输入的密码不一致");
 			return;
 		} else if(strAuthCode.length() == 0) {
-			App.toast("未输入短信验证码");
+			BaseApplication.toast("未输入短信验证码");
 			return;
 		} else if(!strAuthCode.equals(this.strAuthCode)) {
-			App.toast("短信验证码输入错误");
+			BaseApplication.toast("短信验证码输入错误");
 			return;
 		}
 
@@ -177,7 +177,7 @@ public class RegisterActivity extends BaseActivity {
 				runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						App.toast("注册失败，请重试");
+						BaseApplication.toast("注册失败，请重试");
 					}
 				});
 			}
@@ -192,11 +192,11 @@ public class RegisterActivity extends BaseActivity {
 					public void run() {
 						switch(responseBody.getStatus()) {
 							case "1":
-								App.toast("注册成功");
+								BaseApplication.toast("注册成功");
 								finish();
 								break;
 							case "0":
-								App.toast("注册失败，请重试");
+								BaseApplication.toast("注册失败，请重试");
 								break;
 						}
 					}
