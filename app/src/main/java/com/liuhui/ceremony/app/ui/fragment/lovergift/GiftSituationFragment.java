@@ -104,8 +104,6 @@ public class GiftSituationFragment extends Fragment implements ViewPager.OnPageC
 
         viewPagerTab.setViewPager(mViewPager);
         viewPagerTab.setOnPageChangeListener(this);
-        viewPagerTab.setSelectedIndicatorColors(getResources().getColor(R.color.main_color));
-        viewPagerTab.setDefaultTabTextColor(R.drawable.tab_discover_text_color);
     }
 
 
