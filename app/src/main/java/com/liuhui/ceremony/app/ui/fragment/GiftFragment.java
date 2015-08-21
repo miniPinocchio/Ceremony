@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.liuhui.ceremony.app.BaseApplication;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseHomeFragment;
 import com.liuhui.ceremony.app.ui.fragment.lovergift.ContentSchemeFragment;
@@ -39,6 +40,7 @@ public class GiftFragment extends BaseHomeFragment {
     private ContentSchemeFragment contentSchemeFragment;//方案fragment
 
     private ContentStoryFragment contentStoryFragment;//故事fragment
+    private BaseApplication instance;
 
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container) {
@@ -49,8 +51,14 @@ public class GiftFragment extends BaseHomeFragment {
         return view;
     }
 
+
     @Override
     public void initData() {
+        instance = BaseApplication.getInstance();
+
+        if(instance.getCount() != 0){
+            return;
+        }
 
         LogUtil.e("GiftFragment initData ---");
 
@@ -104,6 +112,7 @@ public class GiftFragment extends BaseHomeFragment {
 
         }
         transaction.commit();
+        instance.setCount(1);
     }
 
     /**

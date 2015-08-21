@@ -30,5 +30,6 @@
     <color name="graywhite">#F5F5F5</color>
     <color name="grayslate">#708090</color>
     <color name="lightblue">#0083FF</color>
+    <color name="tabStrip_bg">#fafadbe5</color>
     <color name="gray9">#999</color>
 </resources>

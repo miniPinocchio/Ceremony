@@ -55,8 +55,8 @@ public abstract class BaseGiftContentFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        LogUtil.e("BaseFragment onResume ---");
 
+        LogUtil.e("BaseGiftContentFragment onResume ---");
         initData();
     }
 

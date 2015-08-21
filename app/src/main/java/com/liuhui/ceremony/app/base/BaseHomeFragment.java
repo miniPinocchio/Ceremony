@@ -62,7 +62,7 @@ public abstract class BaseHomeFragment extends Fragment {
     public void onResume() {
         super.onResume();
         LogUtil.e("HomeBaseFragment onResume ---");
-            initData();
+        initData();
     }
 
     /**

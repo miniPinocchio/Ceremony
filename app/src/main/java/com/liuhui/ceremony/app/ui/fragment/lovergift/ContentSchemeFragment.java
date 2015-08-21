@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.liuhui.ceremony.app.BaseApplication;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseGiftContentFragment;
 import com.liuhui.ceremony.app.util.LogUtil;
@@ -44,6 +45,7 @@ public class ContentSchemeFragment extends BaseGiftContentFragment {
     private GiftObjectFragment giftObjectFragment;//情礼对象
     private GiftHobbyFragment giftHobbyFragment;//情礼爱好
     private GiftFestivalGiveFragment giftFestivalGiveFragment;//情礼节日送礼
+    private BaseApplication instance;
 
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container) {
@@ -74,14 +76,13 @@ public class ContentSchemeFragment extends BaseGiftContentFragment {
     @Override
     public void initData() {
 
+        if(BaseApplication.getInstance().getCount() != 1){
+            return;
+        }
+
         getPlanDataFromServer();
 
         fragmentManager = getFragmentManager();
-
-        textViews.add(0, tv_qlqj);
-        textViews.add(1, tv_qldx);
-        textViews.add(2, tv_dxah);
-        textViews.add(3, tv_jrsl);
 
         LogUtil.e("ContentSchemeFragment initData");
 
@@ -98,6 +99,13 @@ public class ContentSchemeFragment extends BaseGiftContentFragment {
     }
 
     public void switchContent(int index) {
+
+        textViews.clear();
+
+        textViews.add(0, tv_qlqj);
+        textViews.add(1, tv_qldx);
+        textViews.add(2, tv_dxah);
+        textViews.add(3, tv_jrsl);
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
@@ -150,6 +158,7 @@ public class ContentSchemeFragment extends BaseGiftContentFragment {
                 textViews.get(i).setTextColor(getResources().getColorStateList(R.color.black));
             }
         }
+        BaseApplication.getInstance().setCount(2);
         transaction.commit();
     }
 

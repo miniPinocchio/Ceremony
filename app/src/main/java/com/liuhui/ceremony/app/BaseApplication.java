@@ -25,6 +25,8 @@ public class BaseApplication extends Application {
 
 	private static String mUserId;
 
+	private static int count = 0;
+
 	@Override
 	public void onCreate() {
 		super.onCreate();
@@ -34,6 +36,14 @@ public class BaseApplication extends Application {
 
 	public static BaseApplication getInstance() {
 		return instance;
+	}
+
+	public int getCount(){
+		return count;
+	}
+
+	public void setCount(int count){
+		this.count = count;
 	}
 
 	/**
