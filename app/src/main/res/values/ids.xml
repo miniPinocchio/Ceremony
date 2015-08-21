@@ -42,4 +42,10 @@
     <item name="bindEmail" type="id"/>
     <item name="bindWeiXin" type="id"/>
     <item name="bindWeiBo" type="id"/>
+
+    <!-- personal info ui -->
+    <item name="setAvatar" type="id"/>
+    <item name="setNickname" type="id"/>
+    <item name="setBirthday" type="id"/>
+    <item name="birthday" type="id"/>
 </resources>

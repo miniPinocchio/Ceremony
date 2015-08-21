@@ -35,7 +35,14 @@
     <string name="bind_wei_bo">绑定微博</string>
     <string name="bind_wei_xin">绑定微信</string>
     <string name="personal_info_title">个人信息</string>
-
+    <string name="avatar">头像</string>
+    <string name="nickname">昵称</string>
+    <string name="birthday">生日</string>
+    <string name="age">年龄</string>
+    <string name="constellation">星座</string>
+    <string name="sex">性别</string>
+    <string name="shipping_address">收货地址</string>
+    <string name="personal_label">个人标签</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
