@@ -14,7 +14,7 @@
     <include layout="@layout/split"/>
 
     <LinearLayout
-        android:id="@id/userInfo"
+        android:id="@id/personalInfo"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/white"

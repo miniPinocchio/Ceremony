@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseHomeFragment;
+import com.liuhui.ceremony.app.ui.activity.PersonalInfoActivity;
 import com.liuhui.ceremony.app.ui.activity.SettingActivity;
 import com.liuhui.ceremony.app.util.LogUtil;
 
@@ -36,11 +37,14 @@ public class PersonalFragment extends BaseHomeFragment {
 		LogUtil.e("PersonalFragment initData ---");
 	}
 
-	@OnClick({R.id.setting})
+	@OnClick({ R.id.setting, R.id.personalInfo })
 	void setClickEvent(View view) {
 		switch(view.getId()) {
 			case R.id.setting:
 				startActivity(new Intent(mActivity, SettingActivity.class));
+				break;
+			case R.id.personalInfo:
+				startActivity(new Intent(mActivity, PersonalInfoActivity.class));
 				break;
 		}
 	}

@@ -24,7 +24,7 @@
     <!-- personal ui -->
     <item name="avatar" type="id"/>
     <item name="nickname" type="id"/>
-    <item name="userInfo" type="id"/>
+    <item name="personalInfo" type="id"/>
     <item name="gradeRecord" type="id"/>
     <item name="impressionRecord" type="id"/>
     <item name="myStory" type="id"/>
@@ -36,4 +36,10 @@
     <item name="noticeSetting" type="id"/>
     <item name="logOut" type="id"/>
 
+    <!-- security setting ui -->
+    <item name="changeMobile" type="id"/>
+    <item name="changePassword" type="id"/>
+    <item name="bindEmail" type="id"/>
+    <item name="bindWeiXin" type="id"/>
+    <item name="bindWeiBo" type="id"/>
 </resources>

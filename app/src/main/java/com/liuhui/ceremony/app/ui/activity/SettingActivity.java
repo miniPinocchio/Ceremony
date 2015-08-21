@@ -1,5 +1,6 @@
 package com.liuhui.ceremony.app.ui.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -33,10 +34,13 @@ public class SettingActivity extends BaseActivity {
 				finish();
 				break;
 			case R.id.logOut:
+				//TODO 注销操作
 				break;
 			case R.id.securitySetting:
+				startActivity(new Intent(this, SecuritySettingActivity.class));
 				break;
 			case R.id.noticeSetting:
+				//TODO 通知设置
 				break;
 		}
 	}

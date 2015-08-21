@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/action_bar"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/changeMobile"
+        style="@style/personalUiButton"
+        android:text="@string/change_mobile"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/bindEmail"
+        style="@style/personalUiButton"
+        android:text="@string/bind_email"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/changePassword"
+        style="@style/personalUiButton"
+        android:text="@string/change_password"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/bindWeiBo"
+        style="@style/personalUiButton"
+        android:text="@string/bind_wei_bo"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/bindWeiXin"
+        style="@style/personalUiButton"
+        android:text="@string/bind_wei_xin"/>
+
+    <include layout="@layout/split"/>
+</LinearLayout>

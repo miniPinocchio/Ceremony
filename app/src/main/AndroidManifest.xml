@@ -26,6 +26,8 @@
         <activity android:name=".ui.activity.MainActivity"/>
         <activity android:name=".ui.activity.ForgetPasswordActivity"/>
         <activity android:name=".ui.activity.SettingActivity"/>
+        <activity android:name=".ui.activity.SecuritySettingActivity"/>
+        <activity android:name=".ui.activity.PersonalInfoActivity"/>
     </application>
 
 </manifest>
