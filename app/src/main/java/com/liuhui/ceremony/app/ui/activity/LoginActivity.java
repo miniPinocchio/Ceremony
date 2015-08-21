@@ -10,7 +10,7 @@ import com.liuhui.ceremony.app.Api;
 import com.liuhui.ceremony.app.BaseApplication;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
-import com.liuhui.ceremony.app.bean.ResponseBody;
+import com.liuhui.ceremony.app.bean.LoginResponseBody;
 import com.liuhui.ceremony.app.constant.RequestParam;
 import com.liuhui.ceremony.app.util.LogUtil;
 import com.liuhui.ceremony.app.util.OkHttpUtil;
@@ -122,14 +122,15 @@ public class LoginActivity extends BaseActivity {
 
 			@Override
 			public void onResponse(Response response) throws IOException {
-				final ResponseBody responseBody = new Gson().fromJson(response.body().string(),
-						ResponseBody.class);
+				final LoginResponseBody responseBody = new Gson().fromJson(response.body().string(),
+						LoginResponseBody.class);
 				LogUtil.e(responseBody.toString());
 				runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
 						switch(responseBody.getStatus()) {
 							case "1":
+								BaseApplication.setUserId(responseBody.getUserid());
 								startActivity(new Intent(LoginActivity.this, MainActivity.class));
 								finish();
 								break;

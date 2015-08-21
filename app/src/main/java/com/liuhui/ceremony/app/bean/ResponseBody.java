@@ -7,8 +7,8 @@ package com.liuhui.ceremony.app.bean;
  */
 public class ResponseBody {
 
-	private String status;
-	private String data;
+	protected String status;
+	protected String data;
 
 	public void setStatus(String status) { this.status = status;}
 
