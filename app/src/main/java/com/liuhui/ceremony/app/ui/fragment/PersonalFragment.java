@@ -17,7 +17,7 @@ import butterknife.OnClick;
 
 /**
  * "我的"选项卡
- * Created by anany on 15/8/14.
+ * Created by Berial on 15/8/14.
  */
 public class PersonalFragment extends BaseHomeFragment {
 
