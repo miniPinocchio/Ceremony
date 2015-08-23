@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseGiftContentFragment;
 
-import butterknife.ButterKnife;
-
 /**
  * 方案Fragment
  * Created by anany on 15/8/19.
@@ -20,9 +18,7 @@ public class ContentStoryFragment extends BaseGiftContentFragment {
 
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container) {
-        View view = inflater.inflate(R.layout.gift_fragment_content_scheme,null);
-        ButterKnife.inject(view);
-        return view;
+        return inflater.inflate(R.layout.gift_fragment_content_scheme,container, false);
     }
 
     @Override

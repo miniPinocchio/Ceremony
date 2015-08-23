@@ -16,7 +16,7 @@ public class GiftFestivalGiveFragment extends BaseGiftContentFragment{
 
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container) {
-        View view = inflater.inflate(R.layout.gift_situation_content, null);
+        View view = inflater.inflate(R.layout.gift_situation_content, container, false);
         ButterKnife.inject(view);
         return view;
     }

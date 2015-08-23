@@ -22,103 +22,104 @@ import com.ogaclejapan.smarttablayout.SmartTabLayout;
  */
 public class GiftSituationFragment extends Fragment implements ViewPager.OnPageChangeListener {
 
-    ViewPager mViewPager;
+	ViewPager mViewPager;
 
-    SmartTabLayout viewPagerTab;
+	SmartTabLayout viewPagerTab;
 
-    private String[] mTitle;
-    private String[] mData;
+	private String[] mTitle;
+	private String[] mData;
 
-    private DisplayMetrics dm;
-
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.gift_situation_content, null);
-        mViewPager = (ViewPager) view.findViewById(R.id.vp_gift_scheme_content);
-        viewPagerTab = (SmartTabLayout) view.findViewById(R.id.viewpagertab);
-        return view;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        initData();
-    }
-
-    public void initData() {
-
-        if(BaseApplication.getInstance().getCount() != 2){
-            return;
-        }
-
-        BaseApplication.getInstance().setCount(3);
-
-        LogUtil.w("GiftSituationFragment initData");
-
-        mTitle = new String[20];
-        mData = new String[20];
-
-        {
-            for(int i=0;i<20;i++) {
-                mTitle[i] = "title" + i;
-                mData[i] = "data" + i;
-            }
-        }
-
-        PagerAdapter mAdapter = new PagerAdapter() {
-            @Override
-            public CharSequence getPageTitle(int position) {
-                return mTitle[position];
-            }
-
-            @Override
-            public int getCount() {
-                return mData.length;
-            }
-
-            @Override
-            public Object instantiateItem(View container, int position) {
-                TextView tv = new TextView(BaseApplication.context);
-                tv.setTextSize(30.f);
-                tv.setText(mData[position]);
-                ((ViewPager) container).addView(tv);
-                return tv;
-            }
-
-            @Override
-            public void destroyItem(ViewGroup container, int position, Object object) {
-                ((ViewPager) container).removeView((View) object);
-            }
-
-            @Override
-            public boolean isViewFromObject(View view, Object object) {
-                return view == object;
-            }
-        };
-
-        mViewPager.setAdapter(mAdapter);
-        dm = getResources().getDisplayMetrics();
-
-        viewPagerTab.setViewPager(mViewPager);
-        viewPagerTab.setOnPageChangeListener(this);
-    }
+	private DisplayMetrics dm;
 
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+	@Nullable
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-    }
+		View view = inflater.inflate(R.layout.gift_situation_content, container, false);
+		mViewPager = (ViewPager) view.findViewById(R.id.vp_gift_scheme_content);
+		viewPagerTab = (SmartTabLayout) view.findViewById(R.id.viewpagertab);
+		return view;
+	}
 
-    @Override
-    public void onPageSelected(int position) {
+	@Override
+	public void onResume() {
+		super.onResume();
+		initData();
+	}
 
-    }
+	public void initData() {
 
-    @Override
-    public void onPageScrollStateChanged(int state) {
+		if(BaseApplication.getInstance().getCount() != 2) {
+			return;
+		}
 
-    }
+		BaseApplication.getInstance().setCount(3);
+
+		LogUtil.w("GiftSituationFragment initData");
+
+		mTitle = new String[20];
+		mData = new String[20];
+
+		{
+			for(int i = 0; i < 20; i++) {
+				mTitle[i] = "title" + i;
+				mData[i] = "data" + i;
+			}
+		}
+
+		PagerAdapter mAdapter = new PagerAdapter() {
+
+			@Override
+			public CharSequence getPageTitle(int position) {
+				return mTitle[position];
+			}
+
+			@Override
+			public int getCount() {
+				return mData.length;
+			}
+
+			@Override
+			public Object instantiateItem(ViewGroup container, int position) {
+				TextView tv = new TextView(BaseApplication.context);
+				tv.setTextSize(30.f);
+				tv.setText(mData[position]);
+				container.addView(tv);
+				return tv;
+			}
+
+			@Override
+			public void destroyItem(ViewGroup container, int position, Object object) {
+				container.removeView((View) object);
+			}
+
+			@Override
+			public boolean isViewFromObject(View view, Object object) {
+				return view == object;
+			}
+		};
+
+		mViewPager.setAdapter(mAdapter);
+		dm = getResources().getDisplayMetrics();
+
+		viewPagerTab.setViewPager(mViewPager);
+		viewPagerTab.setOnPageChangeListener(this);
+	}
+
+
+	@Override
+	public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+	}
+
+	@Override
+	public void onPageSelected(int position) {
+
+	}
+
+	@Override
+	public void onPageScrollStateChanged(int state) {
+
+	}
 }

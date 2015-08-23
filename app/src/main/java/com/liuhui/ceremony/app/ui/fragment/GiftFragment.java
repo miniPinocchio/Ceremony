@@ -14,7 +14,6 @@ import com.liuhui.ceremony.app.ui.fragment.lovergift.ContentSchemeFragment;
 import com.liuhui.ceremony.app.ui.fragment.lovergift.ContentStoryFragment;
 import com.liuhui.ceremony.app.util.LogUtil;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
@@ -47,7 +46,6 @@ public class GiftFragment extends BaseHomeFragment {
 
         LogUtil.e("GiftFragment initView");
         View view = inflater.inflate(R.layout.fragment_gift, container, false);
-        ButterKnife.inject(view);
         return view;
     }
 
