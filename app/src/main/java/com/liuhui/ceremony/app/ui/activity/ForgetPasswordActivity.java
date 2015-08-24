@@ -4,7 +4,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.liuhui.ceremony.app.Api;
 import com.liuhui.ceremony.app.BaseApplication;
 import com.liuhui.ceremony.app.R;
@@ -12,15 +11,8 @@ import com.liuhui.ceremony.app.base.BaseActivity;
 import com.liuhui.ceremony.app.bean.AuthCode;
 import com.liuhui.ceremony.app.bean.ResponseBody;
 import com.liuhui.ceremony.app.constant.RequestParam;
-import com.liuhui.ceremony.app.util.LogUtil;
-import com.liuhui.ceremony.app.util.OkHttpUtil;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.FormEncodingBuilder;
+import com.liuhui.ceremony.app.util.OkHttpClientManager;
 import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
-
-import java.io.IOException;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -89,42 +81,22 @@ public class ForgetPasswordActivity extends BaseActivity {
 			return;
 		}
 
-		RequestBody requestBody = new FormEncodingBuilder()
-				.add(RequestParam.MOBILE, strMobilePhone)
-				.build();
+		OkHttpClientManager.postAsyn(Api.GET_AUTH_CODE, new OkHttpClientManager.ResultCallback<AuthCode>() {
 
-		Request getAuthCodeRequest = new Request.Builder()
-				.url(Api.GET_AUTH_CODE)
-				.post(requestBody)
-				.build();
-
-		OkHttpUtil.enqueue(getAuthCodeRequest, new Callback() {
-			@Override
-			public void onFailure(Request request, IOException e) {
-				runOnUiThread(new Runnable() {
 					@Override
-					public void run() {
+					public void onError(Request request, Exception e) {
 						BaseApplication.toast("获取验证码失败，请重试");
 					}
-				});
-			}
-
-			@Override
-			public void onResponse(Response response) throws IOException {
-				AuthCode objAuthCode = new Gson().fromJson(response.body().string(),
-						AuthCode.class);
-				strAuthCode = objAuthCode.getPincode();
-				runOnUiThread(new Runnable() {
 
 					@Override
-					public void run() {
+					public void onResponse(AuthCode response) {
+						strAuthCode = response.getPincode();
 						BaseApplication.toast(strAuthCode);
 						authCode.setText(strAuthCode);
 						verifiedMobilePhone.setText("已验证手机：" + strMobilePhone);
 					}
-				});
-			}
-		});
+				},
+				new OkHttpClientManager.Param(RequestParam.MOBILE, strMobilePhone));
 	}
 
 	/**
@@ -162,37 +134,17 @@ public class ForgetPasswordActivity extends BaseActivity {
 			return;
 		}
 
-		final RequestBody requestBody = new FormEncodingBuilder()
-				.add(RequestParam.MOBILE, strMobilePhone)
-				.add(RequestParam.PASSWORD, strPassword)
-				.add(RequestParam.AUTH_CODE, strAuthCode)
-				.build();
+		//TODO 接口待定
+		OkHttpClientManager.postAsyn(Api.REGISTER, new OkHttpClientManager.ResultCallback<ResponseBody>() {
 
-		Request loginRequest = new Request.Builder()
-				.url(Api.REGISTER)
-				.post(requestBody)
-				.build();
-
-		OkHttpUtil.enqueue(loginRequest, new Callback() {
-			@Override
-			public void onFailure(Request request, IOException e) {
-				runOnUiThread(new Runnable() {
 					@Override
-					public void run() {
+					public void onError(Request request, Exception e) {
 						BaseApplication.toast("修改密码失败，请重试");
 					}
-				});
-			}
 
-			@Override
-			public void onResponse(Response response) throws IOException {
-				final ResponseBody responseBody = new Gson().fromJson(response.body().string(),
-						ResponseBody.class);
-				LogUtil.e(requestBody.toString());
-				runOnUiThread(new Runnable() {
 					@Override
-					public void run() {
-						switch(responseBody.getStatus()) {
+					public void onResponse(ResponseBody response) {
+						switch(response.getStatus()) {
 							case "1":
 								BaseApplication.toast("修改密码成功");
 								finish();
@@ -202,8 +154,9 @@ public class ForgetPasswordActivity extends BaseActivity {
 								break;
 						}
 					}
-				});
-			}
-		});
+				},
+				new OkHttpClientManager.Param(RequestParam.MOBILE, strMobilePhone),
+				new OkHttpClientManager.Param(RequestParam.PASSWORD, strPassword),
+				new OkHttpClientManager.Param(RequestParam.AUTH_CODE, strAuthCode));
 	}
 }

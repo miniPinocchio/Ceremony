@@ -5,22 +5,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.liuhui.ceremony.app.Api;
 import com.liuhui.ceremony.app.BaseApplication;
+import com.liuhui.ceremony.app.BuildConfig;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
 import com.liuhui.ceremony.app.bean.LoginResponseBody;
 import com.liuhui.ceremony.app.constant.RequestParam;
-import com.liuhui.ceremony.app.util.LogUtil;
-import com.liuhui.ceremony.app.util.OkHttpUtil;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.FormEncodingBuilder;
+import com.liuhui.ceremony.app.util.OkHttpClientManager;
 import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
-
-import java.io.IOException;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -51,6 +44,11 @@ public class LoginActivity extends BaseActivity {
 
 		ButterKnife.findById(this, R.id.back).setVisibility(View.GONE);
 		title.setText(R.string.login_title);
+
+		if(BuildConfig.DEBUG) {
+			mobilePhone.setText("18007770951");
+			password.setText("xiayu215");
+		}
 	}
 
 	/**
@@ -99,38 +97,18 @@ public class LoginActivity extends BaseActivity {
 		}
 
 		//登陆
-		RequestBody loginRequestBody = new FormEncodingBuilder()
-				.add(RequestParam.MOBILE, strMobilePhone)
-				.add(RequestParam.PASSWORD, strPassword)
-				.build();
+		OkHttpClientManager.postAsyn(Api.LOGIN, new OkHttpClientManager.ResultCallback<LoginResponseBody>() {
 
-		Request loginRequest = new Request.Builder()
-				.url(Api.LOGIN)
-				.post(loginRequestBody)
-				.build();
-
-		OkHttpUtil.enqueue(loginRequest, new Callback() {
-			@Override
-			public void onFailure(Request request, IOException e) {
-				runOnUiThread(new Runnable() {
 					@Override
-					public void run() {
+					public void onError(Request request, Exception e) {
 						BaseApplication.toast("登录失败，请重试");
 					}
-				});
-			}
 
-			@Override
-			public void onResponse(Response response) throws IOException {
-				final LoginResponseBody responseBody = new Gson().fromJson(response.body().string(),
-						LoginResponseBody.class);
-				LogUtil.e(responseBody.toString());
-				runOnUiThread(new Runnable() {
 					@Override
-					public void run() {
-						switch(responseBody.getStatus()) {
+					public void onResponse(LoginResponseBody response) {
+						switch(response.getStatus()) {
 							case "1":
-								BaseApplication.setUserId(responseBody.getUserid());
+								BaseApplication.setUserId(response.getUserid());
 								startActivity(new Intent(LoginActivity.this, MainActivity.class));
 								finish();
 								break;
@@ -139,8 +117,8 @@ public class LoginActivity extends BaseActivity {
 								break;
 						}
 					}
-				});
-			}
-		});
+				},
+				new OkHttpClientManager.Param(RequestParam.MOBILE, strMobilePhone),
+				new OkHttpClientManager.Param(RequestParam.PASSWORD, strPassword));
 	}
 }
