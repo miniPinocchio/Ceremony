@@ -46,4 +46,10 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="tv_gralley">相册</string>
+    <string name="tv_discover_qltx">情礼提醒</string>
+    <string name="tv_discover_msg_template">短信模板</string>
+    <string name="tv_discover_scan">扫一扫</string>
+    <string name="tv_discover_mycard">我的卡券</string>
+    <string name="tv_discover_ghht">关怀话题</string>
 </resources>

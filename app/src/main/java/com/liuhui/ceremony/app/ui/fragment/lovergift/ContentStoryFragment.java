@@ -29,4 +29,5 @@ public class ContentStoryFragment extends BaseGiftContentFragment {
     public void initData() {
 
     }
+
 }

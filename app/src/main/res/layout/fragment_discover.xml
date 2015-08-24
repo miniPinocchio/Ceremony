@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/action_bar"/>
+
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@+id/tv_discover_gralley"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_grade_record"
+        android:text="@string/tv_gralley"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@+id/tv_discover_qltx"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_impression_record"
+        android:text="@string/tv_discover_qltx"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@+id/tv_discover_msg_template"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_my_story"
+        android:text="@string/tv_discover_msg_template"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@+id/tv_discover_scan"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_my_favorite"
+        android:text="@string/tv_discover_scan"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@+id/tv_discover_mycard"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_setting"
+        android:text="@string/tv_discover_mycard"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@+id/tv_discover_ghht"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_setting"
+        android:text="@string/tv_discover_ghht"/>
+
+    <include layout="@layout/split"/>
+</LinearLayout>

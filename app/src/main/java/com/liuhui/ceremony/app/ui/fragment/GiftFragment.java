@@ -109,7 +109,6 @@ public class GiftFragment extends BaseHomeFragment {
                     transaction.show(contentStoryFragment);
                 }
                 break;
-
         }
         transaction.commit();
         instance.setCount(1);

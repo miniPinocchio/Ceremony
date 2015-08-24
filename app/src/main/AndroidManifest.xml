@@ -28,6 +28,7 @@
         <activity android:name=".ui.activity.SettingActivity"/>
         <activity android:name=".ui.activity.SecuritySettingActivity"/>
         <activity android:name=".ui.activity.PersonalInfoActivity"/>
+        <activity android:name=".ui.activity.DiscoverGralleryActivity"/>
     </application>
 
 </manifest>
