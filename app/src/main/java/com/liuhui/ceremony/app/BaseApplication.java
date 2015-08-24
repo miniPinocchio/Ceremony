@@ -8,6 +8,8 @@ import android.support.annotation.StringRes;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.liuhui.ceremony.app.util.LogUtil;
+
 /**
  * 应用App类
  * <p/>
@@ -38,11 +40,11 @@ public class BaseApplication extends Application {
 		return instance;
 	}
 
-	public int getCount(){
+	public int getCount() {
 		return count;
 	}
 
-	public void setCount(int count){
+	public void setCount(int count) {
 		this.count = count;
 	}
 
@@ -87,6 +89,7 @@ public class BaseApplication extends Application {
 		instance.getSharedPreferences(APP_CONFIG, Context.MODE_PRIVATE)
 				.edit().putString(USER_ID, userId).commit();
 		mUserId = userId;
+		LogUtil.e("userId -> " + userId);
 	}
 
 }
