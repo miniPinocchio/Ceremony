@@ -3,8 +3,15 @@ package com.liuhui.ceremony.app.ui.activity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.liuhui.ceremony.app.Api;
+import com.liuhui.ceremony.app.BaseApplication;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseActivity;
+import com.liuhui.ceremony.app.bean.PersonalInfo;
+import com.liuhui.ceremony.app.constant.RequestParam;
+import com.liuhui.ceremony.app.util.LogUtil;
+import com.liuhui.ceremony.app.util.OkHttpClientManager;
+import com.squareup.okhttp.Request;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -22,6 +29,24 @@ public class PersonalInfoActivity extends BaseActivity {
 		ButterKnife.inject(this);
 		((TextView) ButterKnife.findById(this, R.id.actionBarTitle))
 				.setText(R.string.personal_info_title);
+	}
+
+	@Override
+	protected void initData() {
+		OkHttpClientManager.postAsyn(Api.PERSONAL_INFO, new OkHttpClientManager
+						.ResultCallback<PersonalInfo>() {
+
+					@Override
+					public void onError(Request request, Exception e) {
+
+					}
+
+					@Override
+					public void onResponse(PersonalInfo response) {
+						LogUtil.e(response.toString());
+					}
+				},
+				new OkHttpClientManager.Param(RequestParam.UID, BaseApplication.getUserId()));
 	}
 
 	/**

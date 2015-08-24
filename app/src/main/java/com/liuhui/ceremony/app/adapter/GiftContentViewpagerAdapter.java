@@ -13,7 +13,7 @@ public class GiftContentViewpagerAdapter extends FragmentPagerAdapter {
 
     List<Fragment> fragments;
 
-    public GiftContentViewpagerAdapter(FragmentManager fm,List<Fragment> fragments) {
+    public GiftContentViewpagerAdapter(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
     }
 

@@ -31,6 +31,13 @@ public abstract class BaseActivity extends AppCompatActivity {
 		this.mAllowFullScreen = allowFullScreen;
 	}
 
+	/**
+	 * 查看是否允许全屏
+	 */
+	public boolean getAllowFullScreen() {
+		return mAllowFullScreen;
+	}
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,6 +48,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		initViews();
+		initData();
 
 		AppManager.getAppManager().addActivity(this);
 	}
@@ -49,6 +57,11 @@ public abstract class BaseActivity extends AppCompatActivity {
 	 * 初始化布局：首行需要setContentView()
 	 */
 	protected abstract void initViews();
+
+	/**
+	 * 获取信息,需要时重写
+	 */
+	protected void initData() {}
 
 	@Override
 	protected void onStart() {

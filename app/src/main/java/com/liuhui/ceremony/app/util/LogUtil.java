@@ -2,6 +2,8 @@ package com.liuhui.ceremony.app.util;
 
 import android.util.Log;
 
+import com.liuhui.ceremony.app.BuildConfig;
+
 /**
  *
  */
@@ -10,7 +12,7 @@ public class LogUtil{
 	static String className;
 	static String methodName;
 	static int lineNumber;
-	static boolean DEBUGGABLE = true; 
+	static boolean DEBUGGABLE = BuildConfig.DEBUG;
 	
     private LogUtil(){
         /* Protect from instantiations */
