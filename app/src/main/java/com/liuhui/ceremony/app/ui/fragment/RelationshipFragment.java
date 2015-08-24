@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.liuhui.ceremony.app.R;
-import com.liuhui.ceremony.app.adapter.ListFriendsViewPagerAdapter;
+import com.liuhui.ceremony.app.adapter.ListFriendsViewpagerAdapter;
 import com.liuhui.ceremony.app.base.BaseHomeFragment;
 import com.liuhui.ceremony.app.util.LogUtil;
 
@@ -55,9 +55,10 @@ public class RelationshipFragment extends BaseHomeFragment implements ViewPager.
         List<Fragment> fragments = new LinkedList<Fragment>();
         fragments.add(listFragment);
         fragments.add(groupListFragment);
-        ListFriendsViewPagerAdapter adapter = new ListFriendsViewPagerAdapter(
+        ListFriendsViewpagerAdapter listFriendsViewpagerAdapter = new ListFriendsViewpagerAdapter(
                 getActivity().getSupportFragmentManager(), fragments);
-        viewpager.setAdapter(adapter);
+
+        viewpager.setAdapter(listFriendsViewpagerAdapter);
         return view;
     }
 
@@ -69,7 +70,7 @@ public class RelationshipFragment extends BaseHomeFragment implements ViewPager.
     @Override
     public void onPageScrolled(int i, float v, int i1) {
         int currentItem = viewpager.getCurrentItem();
-        switch (currentItem){
+        switch (currentItem) {
             case 0:
                 listGroup.check(R.id.realationship_list_group_button1);
                 break;
@@ -92,7 +93,7 @@ public class RelationshipFragment extends BaseHomeFragment implements ViewPager.
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-        switch (checkedId){
+        switch (checkedId) {
             case R.id.realationship_list_group_button1:
                 viewpager.setCurrentItem(0);
                 break;
