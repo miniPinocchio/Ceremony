@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.liuhui.ceremony.app.R;
-import com.liuhui.ceremony.app.adapter.ListFriendsViewpagerAdapter;
+import com.liuhui.ceremony.app.adapter.ListFriendsViewPagerAdapter;
 import com.liuhui.ceremony.app.base.BaseHomeFragment;
 import com.liuhui.ceremony.app.util.LogUtil;
 
@@ -55,7 +55,7 @@ public class RelationshipFragment extends BaseHomeFragment implements ViewPager.
         List<Fragment> fragments = new LinkedList<Fragment>();
         fragments.add(listFragment);
         fragments.add(groupListFragment);
-        ListFriendsViewpagerAdapter adapter = new ListFriendsViewpagerAdapter(
+        ListFriendsViewPagerAdapter adapter = new ListFriendsViewPagerAdapter(
                 getActivity().getSupportFragmentManager(), fragments);
         viewpager.setAdapter(adapter);
         return view;

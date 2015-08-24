@@ -301,8 +301,6 @@
             android:id="@id/nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawablePadding="5dp"
-            android:drawableRight="@mipmap/icon_next"
             android:gravity="center_vertical"
             android:textColor="@color/gray9"
             android:textSize="14sp"/>
