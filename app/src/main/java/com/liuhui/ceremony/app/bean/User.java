@@ -26,6 +26,7 @@ public class User {
 	private String day;
 	private String avatar;
 	private String mobile;
+	private String xingzuo;
 
 	public void setSex(String sex) { this.sex = sex;}
 
@@ -63,6 +64,14 @@ public class User {
 
 	public String getMobile() { return mobile;}
 
+	public String getXingzuo() {
+		return xingzuo;
+	}
+
+	public void setXingzuo(String xingzuo) {
+		this.xingzuo = xingzuo;
+	}
+
 	@Override
 	public String toString() {
 		return "User{" +
@@ -75,6 +84,7 @@ public class User {
 				", day='" + day + '\'' +
 				", avatar='" + avatar + '\'' +
 				", mobile='" + mobile + '\'' +
+				", xingzuo='" + xingzuo + '\'' +
 				'}';
 	}
 }

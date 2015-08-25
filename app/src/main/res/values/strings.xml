@@ -43,6 +43,7 @@
     <string name="sex">性别</string>
     <string name="shipping_address">收货地址</string>
     <string name="personal_label">个人标签</string>
+    <string name="edit_personal_label">编辑标签</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

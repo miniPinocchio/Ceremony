@@ -21,7 +21,7 @@
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="25dp"
+        android:paddingLeft="16dp"
         android:paddingRight="10dp">
 
         <TextView
@@ -62,7 +62,7 @@
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="25dp"
+        android:paddingLeft="16dp"
         android:paddingRight="10dp">
 
         <TextView
@@ -100,7 +100,7 @@
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="25dp"
+        android:paddingLeft="16dp"
         android:paddingRight="10dp">
 
         <TextView
@@ -131,14 +131,13 @@
     <include layout="@layout/split"/>
 
     <LinearLayout
-        android:id="@id/setNickname"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@color/white"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="25dp"
+        android:paddingLeft="16dp"
         android:paddingRight="10dp">
 
         <TextView
@@ -150,7 +149,7 @@
             android:textSize="14sp"/>
 
         <TextView
-            android:id="@id/nickname"
+            android:id="@id/constellation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -167,14 +166,13 @@
     <include layout="@layout/split"/>
 
     <LinearLayout
-        android:id="@id/setNickname"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@color/white"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="25dp"
+        android:paddingLeft="16dp"
         android:paddingRight="10dp">
 
         <TextView
@@ -186,7 +184,7 @@
             android:textSize="14sp"/>
 
         <TextView
-            android:id="@id/nickname"
+            android:id="@id/age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -203,14 +201,14 @@
     <include layout="@layout/split"/>
 
     <LinearLayout
-        android:id="@id/setNickname"
+        android:id="@id/setSex"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@color/white"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="25dp"
+        android:paddingLeft="16dp"
         android:paddingRight="10dp">
 
         <TextView
@@ -222,7 +220,7 @@
             android:textSize="14sp"/>
 
         <TextView
-            android:id="@id/nickname"
+            android:id="@id/sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
@@ -241,14 +239,14 @@
     <include layout="@layout/split"/>
 
     <LinearLayout
-        android:id="@id/setNickname"
+        android:id="@id/setShippingAddress"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@color/white"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="25dp"
+        android:paddingLeft="16dp"
         android:paddingRight="10dp">
 
         <TextView
@@ -260,7 +258,7 @@
             android:textSize="14sp"/>
 
         <TextView
-            android:id="@id/nickname"
+            android:id="@id/shippingAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
@@ -279,15 +277,14 @@
     <include layout="@layout/split"/>
 
     <LinearLayout
-        android:id="@id/setNickname"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@color/white"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="25dp"
-        android:paddingRight="10dp">
+        android:paddingLeft="16dp"
+        android:paddingRight="0dp">
 
         <TextView
             android:layout_width="0dp"
@@ -298,13 +295,30 @@
             android:textSize="14sp"/>
 
         <TextView
-            android:id="@id/nickname"
+            android:id="@id/editPersonalLabel"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:textColor="@color/gray9"
-            android:textSize="14sp"/>
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/edit_personal_label"
+            android:textColor="@color/login_button_color"
+            android:textSize="12sp"/>
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <com.liuhui.ceremony.app.ui.customview.FlowLayout
+            android:id="@id/personalLabelList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
 
     <include layout="@layout/split"/>
 </LinearLayout>

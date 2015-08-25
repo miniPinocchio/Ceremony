@@ -48,6 +48,14 @@
     <item name="setNickname" type="id"/>
     <item name="setBirthday" type="id"/>
     <item name="birthday" type="id"/>
+    <item name="constellation" type="id"/>
+    <item name="sex" type="id"/>
+    <item name="age" type="id"/>
+    <item name="setSex" type="id"/>
+    <item name="shippingAddress" type="id"/>
+    <item name="setShippingAddress" type="id"/>
+    <item name="editPersonalLabel" type="id"/>
+    <item name="personalLabelList" type="id"/>
 
     <!-- record ui -->
     <item name="record" type="id"/>
