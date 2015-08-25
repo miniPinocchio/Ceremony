@@ -1,5 +1,6 @@
 package com.liuhui.ceremony.app.ui.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -35,6 +36,7 @@ public class SecuritySettingActivity extends BaseActivity {
 				finish();
 				break;
 			case R.id.changeMobile:
+				startActivity(new Intent(this, ChangeMobileActivity.class));
 				break;
 			case R.id.bindEmail:
 				break;

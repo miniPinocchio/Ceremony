@@ -115,11 +115,11 @@ public class PersonalInfoActivity extends BaseActivity {
 			}
 		}
 
-		sex.setText(user.getSex());
+		sex.setText(user.getSex().equals("0") ? "女" : "男");
 		shippingAddress.setText(user.getAddress());
 
 		FlowLayout.LayoutParams params = new FlowLayout.LayoutParams(-2, -2);//-2:WRAP_CONTENT
-		params.setMargins(5, 5, 5, 5);
+		params.setMargins(0, 0, 16, 20);
 		for(Impression i : personalInfo.getImpresslist()) {
 			TextView textView = new TextView(this);
 			textView.setText(i.getImpress());
@@ -133,7 +133,7 @@ public class PersonalInfoActivity extends BaseActivity {
 		//添加自定义标签
 		TextView textView = new TextView(this);
 		textView.setText("+");
-		textView.setPadding(10, 6, 10, 6);
+		textView.setPadding(16, 6, 16, 6);
 		textView.setTextColor(Color.WHITE);
 		textView.setTextSize(14);
 		textView.setBackgroundResource(R.drawable.shape_personal_label);

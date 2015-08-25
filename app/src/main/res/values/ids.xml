@@ -59,4 +59,7 @@
 
     <!-- record ui -->
     <item name="record" type="id"/>
+
+    <!-- change mobile ui -->
+    <item name="submit" type="id"/>
 </resources>

@@ -26,4 +26,14 @@ public interface RequestParam {
 	 * 用户id
 	 */
 	String UID = "uid";
+
+	/**
+	 * 昵称
+	 */
+	String NICKNAME = "nickname";
+
+	/**
+	 * 头像
+	 */
+	String AVATAR = "avatar";
 }

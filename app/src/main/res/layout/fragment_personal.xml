@@ -9,33 +9,33 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 
     <LinearLayout
         android:id="@id/personalInfo"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="56dp"
         android:background="@color/white"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="16dp"
-        android:paddingRight="10dp">
+        android:paddingRight="8dp">
 
         <com.liuhui.ceremony.app.ui.customview.roundedimageview.RoundedImageView
             android:id="@id/avatar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@mipmap/default_avatar"
-            app:riv_corner_radius="50dp"/>
+            app:riv_corner_radius="100dp"/>
 
         <TextView
             android:id="@id/nickname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="8dp"
             android:drawableRight="@mipmap/icon_next"
             android:textColor="@color/blackaa"/>
     </LinearLayout>
@@ -44,7 +44,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 
@@ -58,7 +58,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 
@@ -72,7 +72,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 
@@ -86,7 +86,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 
@@ -100,7 +100,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 

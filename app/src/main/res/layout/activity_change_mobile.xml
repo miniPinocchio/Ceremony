@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="32dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="8dp"
@@ -27,79 +27,53 @@
             android:id="@id/mobilePhone"
             style="@style/textCursorDrawable"
             android:background="@drawable/shape_round_rect"
-            android:hint="@string/input_login_mobile_phone"
+            android:hint="@string/input_register_mobile_phone"
             android:inputType="phone"
             android:maxLength="11"
             android:padding="8dp"/>
     </LinearLayout>
 
-    <TextView
-        android:id="@id/getAuthCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="72dp"
-        android:padding="8dp"
-        android:text="@string/get_auth_code"
-        android:textColor="@color/login_button_color"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         android:weightSum="1">
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.28"/>
+
         <TextView
+            android:id="@id/verifiedMobilePhone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:text="@string/password"
-            android:textSize="16sp"/>
+            android:layout_marginLeft="8dp"
+            android:layout_weight="0.72"
+            android:textColor="@color/forget_password_color"
+            android:textSize="12sp"/>
 
-        <EditText
-            android:id="@id/password"
-            style="@style/textCursorDrawable"
-            android:background="@drawable/shape_round_rect"
-            android:hint="@string/input_login_password"
-            android:inputType="textPassword"
-            android:maxLength="12"
-            android:padding="8dp"/>
+        <TextView
+            android:id="@id/getAuthCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/shape_red_color_button"
+            android:paddingBottom="4dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="4dp"
+            android:text="@string/get_auth_code"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:weightSum="1">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:text="@string/confirm_password"
-            android:textSize="16sp"/>
-
-        <EditText
-            android:id="@id/confirmPassword"
-            style="@style/textCursorDrawable"
-            android:background="@drawable/shape_round_rect"
-            android:hint="@string/input_confirm_password"
-            android:inputType="textPassword"
-            android:maxLength="12"
-            android:padding="8dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="8dp"
@@ -124,17 +98,18 @@
     </LinearLayout>
 
     <TextView
-        android:id="@id/register"
+        android:id="@id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/shape_red_color_button"
         android:gravity="center_horizontal"
         android:paddingBottom="8dp"
         android:paddingTop="8dp"
-        android:text="@string/register"
+        android:text="@string/submit"
         android:textColor="@color/white"/>
+
 </LinearLayout>

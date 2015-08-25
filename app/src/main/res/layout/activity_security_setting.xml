@@ -8,7 +8,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 
@@ -21,7 +21,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 
@@ -34,7 +34,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 
@@ -47,7 +47,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 
@@ -60,7 +60,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="15dp"/>
+        android:layout_height="16dp"/>
 
     <include layout="@layout/split"/>
 

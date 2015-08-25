@@ -1,5 +1,6 @@
 package com.liuhui.ceremony.app.ui.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseHomeFragment;
+import com.liuhui.ceremony.app.constant.RequestParam;
 import com.liuhui.ceremony.app.ui.activity.PersonalInfoActivity;
 import com.liuhui.ceremony.app.ui.activity.SettingActivity;
 import com.liuhui.ceremony.app.util.LogUtil;
@@ -41,11 +43,19 @@ public class PersonalFragment extends BaseHomeFragment {
 	void setClickEvent(View view) {
 		switch(view.getId()) {
 			case R.id.setting:
-				startActivity(new Intent(mActivity, SettingActivity.class));
+				startActivityForResult(new Intent(mActivity, SettingActivity.class), 0);
 				break;
 			case R.id.personalInfo:
 				startActivity(new Intent(mActivity, PersonalInfoActivity.class));
 				break;
+		}
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if(requestCode == Activity.RESULT_OK) {
+			String strNickname = data.getStringExtra(RequestParam.NICKNAME);
+			String strAvatarUrl = data.getStringExtra(RequestParam.AVATAR);
 		}
 	}
 }
