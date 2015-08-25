@@ -41,6 +41,7 @@ public class SettingActivity extends BaseActivity {
 				break;
 			case R.id.noticeSetting:
 				//TODO 通知设置
+				startActivity(new Intent(this, NoticeSettingActivity.class));
 				break;
 		}
 	}

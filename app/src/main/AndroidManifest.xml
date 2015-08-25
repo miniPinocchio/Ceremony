@@ -30,6 +30,8 @@
         <activity android:name=".ui.activity.PersonalInfoActivity"/>
         <activity android:name=".ui.activity.RecordActivity"/>
         <activity android:name=".ui.activity.DiscoverGralleryActivity"/>
+        <activity android:name=".ui.activity.NoticeSettingActivity"/>
+        <activity android:name=".ui.activity.ChangeMobileActivity"/>
     </application>
 
 </manifest>
