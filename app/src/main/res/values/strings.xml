@@ -53,4 +53,5 @@
     <string name="tv_discover_scan">扫一扫</string>
     <string name="tv_discover_mycard">我的卡券</string>
     <string name="tv_discover_ghht">关怀话题</string>
+    <string name="load">加载中...</string>
 </resources>
