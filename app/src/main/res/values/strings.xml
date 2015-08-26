@@ -45,6 +45,7 @@
     <string name="personal_label">个人标签</string>
     <string name="edit_personal_label">编辑标签</string>
     <string name="submit">提交</string>
+    <string name="complete">完成</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

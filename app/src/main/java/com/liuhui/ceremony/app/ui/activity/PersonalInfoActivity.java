@@ -30,7 +30,7 @@ import butterknife.OnClick;
 
 /**
  * 个人信息
- * <p/>
+ * <p>
  * Created by berial on 15/8/21.
  */
 public class PersonalInfoActivity extends BaseActivity {
@@ -65,6 +65,8 @@ public class PersonalInfoActivity extends BaseActivity {
 		ButterKnife.inject(this);
 		((TextView) ButterKnife.findById(this, R.id.actionBarTitle))
 				.setText(R.string.personal_info_title);
+		((TextView) ButterKnife.findById(this, R.id.actionBarRightText))
+				.setText(R.string.complete);
 	}
 
 	@Override
@@ -95,7 +97,8 @@ public class PersonalInfoActivity extends BaseActivity {
 
 		String avatarUrl = user.getAvatar();
 		if(!TextUtils.isEmpty(avatarUrl)) {
-			Picasso.with(this).load(Api.BASE_URL + "/" + avatarUrl).into(avatar);
+			Picasso.with(this).load(Api.BASE_URL + "/" + avatarUrl)
+					.error(R.mipmap.default_avatar).into(avatar);
 		}
 		nickname.setText(user.getNickname());
 
@@ -144,12 +147,31 @@ public class PersonalInfoActivity extends BaseActivity {
 	/**
 	 * 设置点击事件
 	 */
-	@OnClick({ R.id.back })
+	@OnClick({ R.id.back, R.id.actionBarRightText, R.id.setAvatar })
 	void setClickEvent(View view) {
 		switch(view.getId()) {
 			case R.id.back:
 				finish();
 				break;
+			case R.id.actionBarRightText:
+				submitPersonalInfo();
+				break;
+			case R.id.setAvatar:
+				break;
 		}
+	}
+
+	/**
+	 * 设置头像
+	 */
+	private void setAvatar() {
+
+	}
+
+	/**
+	 * 提交编辑过的个人信息
+	 */
+	private void submitPersonalInfo() {
+		//TODO 等待接口完善
 	}
 }

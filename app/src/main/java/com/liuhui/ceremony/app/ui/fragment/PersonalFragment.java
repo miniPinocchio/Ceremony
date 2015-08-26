@@ -2,19 +2,24 @@ package com.liuhui.ceremony.app.ui.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.liuhui.ceremony.app.Api;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseHomeFragment;
 import com.liuhui.ceremony.app.constant.RequestParam;
 import com.liuhui.ceremony.app.ui.activity.PersonalInfoActivity;
 import com.liuhui.ceremony.app.ui.activity.SettingActivity;
+import com.liuhui.ceremony.app.ui.customview.roundedimageview.RoundedImageView;
 import com.liuhui.ceremony.app.util.LogUtil;
+import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
@@ -22,6 +27,12 @@ import butterknife.OnClick;
  * Created by Berial on 15/8/14.
  */
 public class PersonalFragment extends BaseHomeFragment {
+
+	@InjectView(R.id.avatar)
+	RoundedImageView avatar;
+
+	@InjectView(R.id.nickname)
+	TextView nickname;
 
 	@Override
 	public View initView(LayoutInflater inflater, ViewGroup container) {
@@ -54,8 +65,12 @@ public class PersonalFragment extends BaseHomeFragment {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if(requestCode == Activity.RESULT_OK) {
-			String strNickname = data.getStringExtra(RequestParam.NICKNAME);
-			String strAvatarUrl = data.getStringExtra(RequestParam.AVATAR);
+			nickname.setText(data.getStringExtra(RequestParam.NICKNAME));
+			String avatarUrl = data.getStringExtra(RequestParam.AVATAR);
+			if(!TextUtils.isEmpty(avatarUrl)) {
+				Picasso.with(mActivity).load(Api.BASE_URL + "/" + avatarUrl)
+						.error(R.mipmap.default_avatar).into(avatar);
+			}
 		}
 	}
 }
