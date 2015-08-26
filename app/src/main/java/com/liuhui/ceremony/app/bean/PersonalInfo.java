@@ -1,5 +1,8 @@
 package com.liuhui.ceremony.app.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
@@ -7,7 +10,7 @@ import java.util.List;
  * <p/>
  * Created by berial on 15/8/24.
  */
-public class PersonalInfo {
+public class PersonalInfo implements Parcelable {
 
 	private List<User> userinfo;
 	private List<Impression> impresslist;
@@ -45,4 +48,28 @@ public class PersonalInfo {
 				", xzlist=" + xzlist +
 				'}';
 	}
+
+	@Override
+	public int describeContents() { return 0; }
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeTypedList(userinfo);
+		dest.writeTypedList(impresslist);
+		dest.writeTypedList(xzlist);
+	}
+
+	public PersonalInfo() {}
+
+	protected PersonalInfo(Parcel in) {
+		this.userinfo = in.createTypedArrayList(User.CREATOR);
+		this.impresslist = in.createTypedArrayList(Impression.CREATOR);
+		this.xzlist = in.createTypedArrayList(Constellation.CREATOR);
+	}
+
+	public static final Parcelable.Creator<PersonalInfo> CREATOR = new Parcelable.Creator<PersonalInfo>() {
+		public PersonalInfo createFromParcel(Parcel source) {return new PersonalInfo(source);}
+
+		public PersonalInfo[] newArray(int size) {return new PersonalInfo[size];}
+	};
 }

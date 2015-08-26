@@ -60,6 +60,10 @@ public class OkHttpClientManager {
 		return mInstance;
 	}
 
+	public OkHttpClient getOkHttpClient() {
+		return mOkHttpClient;
+	}
+
 	/**
 	 * 同步的Get请求
 	 *

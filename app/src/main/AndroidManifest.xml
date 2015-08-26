@@ -32,6 +32,7 @@
         <activity android:name=".ui.activity.DiscoverGralleryActivity"/>
         <activity android:name=".ui.activity.NoticeSettingActivity"/>
         <activity android:name=".ui.activity.ChangeMobileActivity"/>
+        <activity android:name=".ui.activity.EditPersonalLabelActivity"/>
     </application>
 
 </manifest>

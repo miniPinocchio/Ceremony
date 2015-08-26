@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">晓礼</string>
 
+    <string-array name="set_avatar">
+        <item>拍照换头像</item>
+        <item>从相册选择新头像</item>
+        <item>取消</item>
+    </string-array>
+
     <string name="login_title">登录账号</string>
     <string name="cancel">取消</string>
     <string name="mobile_phone">手机号</string>

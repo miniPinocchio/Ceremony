@@ -8,7 +8,13 @@ import android.support.annotation.StringRes;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.integration.okhttp.OkHttpUrlLoader;
+import com.bumptech.glide.load.model.GlideUrl;
 import com.liuhui.ceremony.app.util.LogUtil;
+import com.liuhui.ceremony.app.util.OkHttpClientManager;
+
+import java.io.InputStream;
 
 /**
  * 应用App类
@@ -27,13 +33,17 @@ public class BaseApplication extends Application {
 
 	private static String mUserId;
 
-	private static int count = 0;
+	private static int count;
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		instance = this;
 		context = getApplicationContext();
+
+		Glide.get(this).register(GlideUrl.class, InputStream.class,
+				new OkHttpUrlLoader.Factory(OkHttpClientManager.getInstance()
+						.getOkHttpClient()));
 	}
 
 	public static BaseApplication getInstance() {
@@ -45,7 +55,7 @@ public class BaseApplication extends Application {
 	}
 
 	public void setCount(int count) {
-		this.count = count;
+		BaseApplication.count = count;
 	}
 
 	/**

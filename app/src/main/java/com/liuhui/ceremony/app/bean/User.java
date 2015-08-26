@@ -1,11 +1,14 @@
 package com.liuhui.ceremony.app.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * 用户
  * <p/>
  * Created by berial on 15/8/24.
  */
-public class User {
+public class User implements Parcelable {
 	/**
 	 * sex : 1
 	 * address : 北京市朝阳区东四大街
@@ -87,4 +90,42 @@ public class User {
 				", xingzuo='" + xingzuo + '\'' +
 				'}';
 	}
+
+	@Override
+	public int describeContents() { return 0; }
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(this.sex);
+		dest.writeString(this.address);
+		dest.writeString(this.nickname);
+		dest.writeString(this.month);
+		dest.writeString(this.userid);
+		dest.writeString(this.year);
+		dest.writeString(this.day);
+		dest.writeString(this.avatar);
+		dest.writeString(this.mobile);
+		dest.writeString(this.xingzuo);
+	}
+
+	public User() {}
+
+	protected User(Parcel in) {
+		this.sex = in.readString();
+		this.address = in.readString();
+		this.nickname = in.readString();
+		this.month = in.readString();
+		this.userid = in.readString();
+		this.year = in.readString();
+		this.day = in.readString();
+		this.avatar = in.readString();
+		this.mobile = in.readString();
+		this.xingzuo = in.readString();
+	}
+
+	public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
+		public User createFromParcel(Parcel source) {return new User(source);}
+
+		public User[] newArray(int size) {return new User[size];}
+	};
 }

@@ -51,7 +51,6 @@ public class RoundedDrawable extends Drawable {
   private final Paint mBorderPaint;
   private final Matrix mShaderMatrix = new Matrix();
 
-  private BitmapShader mBitmapShader;
   private Shader.TileMode mTileModeX = Shader.TileMode.CLAMP;
   private Shader.TileMode mTileModeY = Shader.TileMode.CLAMP;
   private boolean mRebuildShader = true;
@@ -260,11 +259,11 @@ public class RoundedDrawable extends Drawable {
   @Override
   public void draw(Canvas canvas) {
     if (mRebuildShader) {
-      mBitmapShader = new BitmapShader(mBitmap, mTileModeX, mTileModeY);
+      BitmapShader bitmapShader = new BitmapShader(mBitmap, mTileModeX, mTileModeY);
       if (mTileModeX == Shader.TileMode.CLAMP && mTileModeY == Shader.TileMode.CLAMP) {
-        mBitmapShader.setLocalMatrix(mShaderMatrix);
+        bitmapShader.setLocalMatrix(mShaderMatrix);
       }
-      mBitmapPaint.setShader(mBitmapShader);
+      mBitmapPaint.setShader(bitmapShader);
       mRebuildShader = false;
     }
 

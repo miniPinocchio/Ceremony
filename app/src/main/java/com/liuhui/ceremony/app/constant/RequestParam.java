@@ -36,4 +36,29 @@ public interface RequestParam {
 	 * 头像
 	 */
 	String AVATAR = "avatar";
+
+	/**
+	 * 生日-天
+	 */
+	String DAY = "day";
+
+	/**
+	 * 生日-年
+	 */
+	String YEAR = "year";
+
+	/**
+	 * 生日-月
+	 */
+	String MONTH = "month";
+
+	/**
+	 * 收货地址
+	 */
+	String ADDRESS = "address";
+
+	/**
+	 * 性别
+	 */
+	String SEX = "sex";
 }
