@@ -46,7 +46,7 @@ public class MainActivity extends BaseActivity implements TabHost.OnTabChangeLis
             R.drawable.tab_personal_text_color};
 
     //Tab选项卡的文字
-    private String mTextviewArray[] = {"关系", "情礼", "攻略", "我的"};
+    private String mTextviewArray[] = {"关系", "情礼", "发现", "我的"};
 
     @Override
     protected void initViews() {

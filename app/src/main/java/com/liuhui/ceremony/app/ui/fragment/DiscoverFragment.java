@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseHomeFragment;
 import com.liuhui.ceremony.app.ui.activity.DiscoverGralleryActivity;
+import com.liuhui.ceremony.app.ui.activity.DiscoverMsgTemplateActivity;
 import com.liuhui.ceremony.app.util.LogUtil;
 
 import butterknife.OnClick;
@@ -24,6 +27,10 @@ public class DiscoverFragment extends BaseHomeFragment {
         LogUtil.e("DiscoverFragment initView");
 
         View view = inflater.inflate(R.layout.fragment_discover, container, false);
+        ImageView back = (ImageView) view.findViewById(R.id.back);
+        back.setVisibility(View.GONE);
+        TextView actionBarTitle = (TextView) view.findViewById(R.id.actionBarTitle);
+        actionBarTitle.setText("发现");
         return view;
     }
 
@@ -43,6 +50,7 @@ public class DiscoverFragment extends BaseHomeFragment {
             case R.id.tv_discover_qltx://情礼提醒
                 break;
             case R.id.tv_discover_msg_template://短信模板
+                intent = new Intent(getActivity(), DiscoverMsgTemplateActivity.class);
                 break;
             case R.id.tv_discover_scan://扫一扫
                 break;

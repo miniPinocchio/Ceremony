@@ -33,6 +33,7 @@
         <activity android:name=".ui.activity.NoticeSettingActivity"/>
         <activity android:name=".ui.activity.ChangeMobileActivity"/>
         <activity android:name=".ui.activity.EditPersonalLabelActivity"/>
+        <activity android:name=".ui.activity.DiscoverMsgTemplateActivity"/>
     </application>
 
 </manifest>
