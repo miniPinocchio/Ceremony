@@ -70,7 +70,7 @@ public class DiscoverGralleryActivity extends BaseActivity {
 //        });
 
 
-        OkHttpClientManager.postAsyn(Api.GALLERY,
+        OkHttpClientManager.postAsyn(Api.GRALLERY,
                 new OkHttpClientManager.ResultCallback<GralleryItemList>() {
 
                     @Override

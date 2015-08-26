@@ -8,11 +8,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.liuhui.ceremony.app.Api;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.bean.GralleryItemList;
 import com.liuhui.ceremony.app.util.LogUtil;
-import com.liuhui.ceremony.app.util.OkHttpClientManager;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -81,9 +81,16 @@ public class GralleryListAdapter extends BaseAdapter {
 
         if (urlstr != null) {
             try {
-                OkHttpClientManager.displayImage(holder.iv_item_1, Api.BASE_URL + "/" + urlstr.get(0));
-                OkHttpClientManager.displayImage(holder.iv_item_2, Api.BASE_URL + "/" + urlstr.get(1));
-                OkHttpClientManager.displayImage(holder.iv_item_3, Api.BASE_URL + "/" + urlstr.get(2));
+                String imgUrl1= Api.BASE_URL + "/" + urlstr.get(0);
+                String imgUrl2= Api.BASE_URL + "/" + urlstr.get(1);
+                String imgUrl3= Api.BASE_URL + "/" + urlstr.get(2);
+
+                Glide.with(context).load(imgUrl1)
+                        .into(holder.iv_item_1);
+                Glide.with(context).load(imgUrl2)
+                        .into(holder.iv_item_2);
+                Glide.with(context).load(imgUrl3)
+                        .into(holder.iv_item_3);
             } catch (Exception e) {
                 LogUtil.e("获取图片失败");
             }

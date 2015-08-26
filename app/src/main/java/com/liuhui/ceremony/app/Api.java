@@ -40,12 +40,12 @@ public class Api {
     /**
      * 相册
      */
-    public static String GRALLERY = BASE_URL + "/index.php?s=appapi&a=album";
+    public static final String GRALLERY = BASE_URL + "/index.php?s=appapi&a=album";
 
     /**
      * 短信模板【祝福语】
      */
-    public static String MSGTEMPLATE = BASE_URL + "/index.php?s=appapi&a=bless";
+    public static final String MSGTEMPLATE = BASE_URL + "/index.php?s=appapi&a=bless";
 	/**
 	 * 情礼攻略
 	 */
