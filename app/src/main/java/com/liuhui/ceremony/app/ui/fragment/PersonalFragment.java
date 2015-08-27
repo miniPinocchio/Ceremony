@@ -16,7 +16,11 @@ import com.liuhui.ceremony.app.base.BaseHomeFragment;
 import com.liuhui.ceremony.app.bean.PersonalInfo;
 import com.liuhui.ceremony.app.bean.User;
 import com.liuhui.ceremony.app.constant.RequestParam;
+import com.liuhui.ceremony.app.ui.activity.GiftRecordActivity;
+import com.liuhui.ceremony.app.ui.activity.MyFavoriteActivity;
+import com.liuhui.ceremony.app.ui.activity.MyStoryActivity;
 import com.liuhui.ceremony.app.ui.activity.PersonalInfoActivity;
+import com.liuhui.ceremony.app.ui.activity.RecordActivity;
 import com.liuhui.ceremony.app.ui.activity.SettingActivity;
 import com.liuhui.ceremony.app.ui.customview.roundedimageview.RoundedImageView;
 import com.liuhui.ceremony.app.util.LogUtil;
@@ -90,12 +94,26 @@ public class PersonalFragment extends BaseHomeFragment {
 		}
 
 		String strNickname = user.getNickname();
-		nickname.setText(strNickname);
+		nickname.setText(TextUtils.isEmpty(strNickname) ? user.getMobile() : strNickname);
 	}
 
-	@OnClick({ R.id.setting, R.id.personalInfo })
+	@OnClick({ R.id.setting, R.id.personalInfo, R.id.giftRecord, R.id.impressionRecord,
+			R.id.gradeRecord, R.id.myStory, R.id.myFavorite })
 	void setClickEvent(View view) {
 		switch(view.getId()) {
+			case R.id.gradeRecord:
+			case R.id.impressionRecord:
+				startActivity(new Intent(mActivity, RecordActivity.class));
+				break;
+			case R.id.myStory:
+				startActivity(new Intent(mActivity, MyStoryActivity.class));
+				break;
+			case R.id.myFavorite:
+				startActivity(new Intent(mActivity, MyFavoriteActivity.class));
+				break;
+			case R.id.giftRecord:
+				startActivity(new Intent(mActivity, GiftRecordActivity.class));
+				break;
 			case R.id.setting:
 				startActivity(new Intent(mActivity, SettingActivity.class));
 				break;

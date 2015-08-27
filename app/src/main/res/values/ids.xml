@@ -30,6 +30,9 @@
     <item name="myStory" type="id"/>
     <item name="myFavorite" type="id"/>
     <item name="setting" type="id"/>
+    <item name="contacts" type="id"/>
+    <item name="giftRecord" type="id"/>
+    <item name="relative" type="id"/>
 
     <!-- setting ui -->
     <item name="securitySetting" type="id"/>
@@ -57,8 +60,12 @@
     <item name="editPersonalLabel" type="id"/>
     <item name="personalLabelList" type="id"/>
 
+    <!-- edit personal label ui -->
+    <item name="setAnon" type="id"/>
+
     <!-- record ui -->
     <item name="record" type="id"/>
+    <item name="radioGroup" type="id"/>
 
     <!-- change mobile ui -->
     <item name="submit" type="id"/>

@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.liuhui.ceremony.app.Api;
 import com.liuhui.ceremony.app.BaseApplication;
 import com.liuhui.ceremony.app.R;
@@ -28,7 +29,6 @@ import com.liuhui.ceremony.app.bean.User;
 import com.liuhui.ceremony.app.constant.RequestParam;
 import com.liuhui.ceremony.app.ui.customview.FlowLayout;
 import com.liuhui.ceremony.app.ui.customview.roundedimageview.RoundedImageView;
-import com.liuhui.ceremony.app.util.LogUtil;
 import com.liuhui.ceremony.app.util.OkHttpClientManager;
 import com.squareup.okhttp.Request;
 
@@ -94,7 +94,6 @@ public class PersonalInfoActivity extends BaseActivity {
 	protected void initData() {
 		PersonalInfo personalInfo = getIntent().getParcelableExtra("personalInfo");
 		String userId = BaseApplication.getUserId();
-		LogUtil.e(personalInfo + "");
 		if(personalInfo != null) {
 			setPersonalInfo(personalInfo);
 		} else if(!TextUtils.isEmpty(userId)) {
@@ -130,7 +129,7 @@ public class PersonalInfoActivity extends BaseActivity {
 		}
 
 		String strNickname = user.getNickname();
-		this.nickname.setText(strNickname);
+		nickname.setText(TextUtils.isEmpty(strNickname) ? user.getMobile() : strNickname);
 
 		String year = user.getYear();
 		if(!TextUtils.isEmpty(year)) {
@@ -149,9 +148,11 @@ public class PersonalInfoActivity extends BaseActivity {
 		sex.setText(user.getSex().equals("0") ? "女" : "男");
 		shippingAddress.setText(user.getAddress());
 
+		List<Impression> impressionList = personalInfo.getImpresslist();
+		personalLabelList.setTag(new Gson().toJson(impressionList));
 		FlowLayout.LayoutParams params = new FlowLayout.LayoutParams(-2, -2);//-2:WRAP_CONTENT
 		params.setMargins(0, 0, 16, 20);
-		for(Impression i : personalInfo.getImpresslist()) {
+		for(Impression i : impressionList) {
 			TextView textView = new TextView(this);
 			textView.setText(i.getImpress());
 			textView.setPadding(10, 6, 10, 6);
@@ -196,7 +197,9 @@ public class PersonalInfoActivity extends BaseActivity {
 				setSex();
 				break;
 			case R.id.editPersonalLabel:
-				startActivityForResult(new Intent(this, EditPersonalLabelActivity.class), 0);
+				startActivityForResult(new Intent(this, EditPersonalLabelActivity.class)
+						.putExtra("nickname", nickname.getText().toString()).putExtra("personalLabelJson",
+								personalLabelList.getTag().toString()), 0);
 				break;
 		}
 	}

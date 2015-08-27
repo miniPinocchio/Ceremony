@@ -34,6 +34,9 @@
         <activity android:name=".ui.activity.ChangeMobileActivity"/>
         <activity android:name=".ui.activity.EditPersonalLabelActivity"/>
         <activity android:name=".ui.activity.DiscoverMsgTemplateActivity"/>
+        <activity android:name=".ui.activity.MyStoryActivity"/>
+        <activity android:name=".ui.activity.MyFavoriteActivity"/>
+        <activity android:name=".ui.activity.GiftRecordActivity"/>
     </application>
 
 </manifest>

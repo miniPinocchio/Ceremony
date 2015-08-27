@@ -52,6 +52,10 @@
     <string name="edit_personal_label">编辑标签</string>
     <string name="submit">提交</string>
     <string name="complete">完成</string>
+    <string name="gift_record">情礼记录</string>
+    <string name="relative">关系网络图</string>
+    <string name="contacts">通讯录整理</string>
+    <string name="input_comment">写下你对TA的评论</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -61,5 +65,5 @@
     <string name="tv_discover_scan">扫一扫</string>
     <string name="tv_discover_mycard">我的卡券</string>
     <string name="tv_discover_ghht">关怀话题</string>
-    <string name="load">加载中...</string>
+    <string name="load">加载中…</string>
 </resources>

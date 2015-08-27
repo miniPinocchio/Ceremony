@@ -2,7 +2,80 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/white"
               android:orientation="vertical">
 
     <include layout="@layout/action_bar"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_round_rect"
+        android:hint="@string/input_comment"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textColor="@color/blackaa"
+        android:textSize="14sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <CheckBox
+            android:id="@id/setAnon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_red_color_button"
+            android:paddingBottom="8dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="8dp"
+            android:text="@string/submit"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp"/>
+
+    <include layout="@layout/split"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/window_background"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/window_background"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <com.liuhui.ceremony.app.ui.customview.FlowLayout
+            android:id="@id/personalLabelList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/window_background"/>
+
+    <include layout="@layout/split"/>
+
 </LinearLayout>

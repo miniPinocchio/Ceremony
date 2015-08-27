@@ -44,7 +44,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="16dp"/>
+        android:layout_height="8dp"/>
 
     <include layout="@layout/split"/>
 
@@ -58,7 +58,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="16dp"/>
+        android:layout_height="8dp"/>
 
     <include layout="@layout/split"/>
 
@@ -72,7 +72,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="16dp"/>
+        android:layout_height="8dp"/>
 
     <include layout="@layout/split"/>
 
@@ -86,7 +86,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="16dp"/>
+        android:layout_height="8dp"/>
 
     <include layout="@layout/split"/>
 
@@ -100,7 +100,49 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="16dp"/>
+        android:layout_height="8dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/giftRecord"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_gift_record"
+        android:text="@string/gift_record"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="8dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/contacts"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_contacts"
+        android:text="@string/contacts"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="8dp"/>
+
+    <include layout="@layout/split"/>
+
+    <TextView
+        android:id="@id/relative"
+        style="@style/personalUiButton"
+        android:drawableLeft="@mipmap/icon_relative"
+        android:text="@string/relative"/>
+
+    <include layout="@layout/split"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="8dp"/>
 
     <include layout="@layout/split"/>
 

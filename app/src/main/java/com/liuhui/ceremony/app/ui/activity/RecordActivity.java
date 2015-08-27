@@ -1,6 +1,8 @@
 package com.liuhui.ceremony.app.ui.activity;
 
 import android.view.View;
+import android.widget.ListView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.liuhui.ceremony.app.R;
@@ -19,6 +21,12 @@ public class RecordActivity extends BaseActivity {
 
 	@InjectView(R.id.actionBarTitle)
 	TextView title;
+
+	@InjectView(R.id.radioGroup)
+	RadioGroup mRadioGroup;
+
+	@InjectView(R.id.record)
+	ListView record;
 
 	@Override
 	protected void initViews() {
