@@ -56,6 +56,8 @@
     <string name="relative">关系网络图</string>
     <string name="contacts">通讯录整理</string>
     <string name="input_comment">写下你对TA的评论</string>
+    <string name="impression">印象</string>
+    <string name="grade">打分</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

@@ -10,15 +10,19 @@
     <RadioGroup
         android:id="@id/radioGroup"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="40dp"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@id/gradeRecord"
+            android:id="@id/impressionRecord"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:button="@null"/>
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/impression"
+            android:textColor="@drawable/selector_record_type"
+            android:textSize="16sp"/>
 
         <View
             android:layout_width="1px"
@@ -26,11 +30,15 @@
             android:background="@color/gray9"/>
 
         <RadioButton
-            android:id="@id/impressionRecord"
+            android:id="@id/gradeRecord"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:button="@null"/>
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/grade"
+            android:textColor="@drawable/selector_record_type"
+            android:textSize="16sp"/>
     </RadioGroup>
 
     <View

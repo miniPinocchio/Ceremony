@@ -15,7 +15,6 @@
         <com.liuhui.ceremony.app.ui.customview.roundedimageview.RoundedImageView
             android:id="@+id/iv_fengmian"
             android:layout_width="match_parent"
-            android:background="@mipmap/aaaa"
             android:layout_height="150dp"
             app:riv_corner_radius="30dp"/>
 

@@ -95,6 +95,7 @@ public class PersonalFragment extends BaseHomeFragment {
 
 		String strNickname = user.getNickname();
 		nickname.setText(TextUtils.isEmpty(strNickname) ? user.getMobile() : strNickname);
+		nickname.setTag(user.getMobile());
 	}
 
 	@OnClick({ R.id.setting, R.id.personalInfo, R.id.giftRecord, R.id.impressionRecord,
@@ -103,7 +104,12 @@ public class PersonalFragment extends BaseHomeFragment {
 		switch(view.getId()) {
 			case R.id.gradeRecord:
 			case R.id.impressionRecord:
-				startActivity(new Intent(mActivity, RecordActivity.class));
+				if(nickname.getTag() != null) {
+					startActivity(new Intent(mActivity, RecordActivity.class)
+							.putExtra(RequestParam.MOBILE, nickname.getTag().toString())
+							.putExtra(RequestParam.NICKNAME, nickname.getText().toString())
+							.putExtra("recordType", view.getId()));
+				}
 				break;
 			case R.id.myStory:
 				startActivity(new Intent(mActivity, MyStoryActivity.class));

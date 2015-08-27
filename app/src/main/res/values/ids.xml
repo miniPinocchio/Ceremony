@@ -69,4 +69,11 @@
 
     <!-- change mobile ui -->
     <item name="submit" type="id"/>
+
+    <!-- item grade record -->
+    <item name="gradeTime" type="id"/>
+    <item name="grade" type="id"/>
+    <item name="praiseNum" type="id"/>
+    <item name="commentNum" type="id"/>
+
 </resources>
