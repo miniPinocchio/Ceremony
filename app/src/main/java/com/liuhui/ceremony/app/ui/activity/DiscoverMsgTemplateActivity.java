@@ -37,7 +37,7 @@ public class DiscoverMsgTemplateActivity extends BaseActivity{
     @Override
     protected void initData() {
 
-        OkHttpClientManager.getAsyn(Api.MSGTEMPLATE, new OkHttpClientManager.ResultCallback<String>() {
+        OkHttpClientManager.getAsyn(Api.MSG_TEMPLATE, new OkHttpClientManager.ResultCallback<String>() {
             @Override
             public void onError(Request request, Exception e) {
                 LogUtil.e(e.toString());

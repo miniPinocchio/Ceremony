@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseGiftContentFragment;
+import com.liuhui.ceremony.app.bean.GiftSchemeBean;
 
 import butterknife.ButterKnife;
 
@@ -25,6 +26,11 @@ public class GiftHobbyFragment extends BaseGiftContentFragment{
 
     @Override
     public void initData() {
+
+    }
+
+    @Override
+    public void setData(GiftSchemeBean giftSchemeBean) {
 
     }
 }

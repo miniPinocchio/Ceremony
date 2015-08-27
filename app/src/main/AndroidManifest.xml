@@ -29,7 +29,7 @@
         <activity android:name=".ui.activity.SecuritySettingActivity"/>
         <activity android:name=".ui.activity.PersonalInfoActivity"/>
         <activity android:name=".ui.activity.RecordActivity"/>
-        <activity android:name=".ui.activity.DiscoverGralleryActivity"/>
+        <activity android:name=".ui.activity.DiscoverGalleryActivity"/>
         <activity android:name=".ui.activity.NoticeSettingActivity"/>
         <activity android:name=".ui.activity.ChangeMobileActivity"/>
         <activity android:name=".ui.activity.EditPersonalLabelActivity"/>

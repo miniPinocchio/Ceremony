@@ -1,5 +1,6 @@
 package com.liuhui.ceremony.app.ui.fragment.lovergift;
 
+import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.liuhui.ceremony.app.BaseApplication;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseGiftContentFragment;
+import com.liuhui.ceremony.app.bean.GiftSchemeBean;
 import com.liuhui.ceremony.app.util.LogUtil;
 
 import java.util.ArrayList;
@@ -46,10 +48,17 @@ public class ContentSchemeFragment extends BaseGiftContentFragment {
     private GiftHobbyFragment giftHobbyFragment;//情礼爱好
     private GiftFestivalGiveFragment giftFestivalGiveFragment;//情礼节日送礼
     private BaseApplication instance;
+    private List<GiftSchemeBean.TagsEntity> tags;
+    private List<GiftSchemeBean.TypelistEntity> typelist;
+
+    public GiftSchemeBean giftSchemeBean = null;
+
+    public Context mContext;
 
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container) {
         View view = inflater.inflate(R.layout.gift_fragment_content_scheme, null);
+        mContext = getActivity();
         ButterKnife.inject(view);
         return view;
     }
@@ -76,11 +85,10 @@ public class ContentSchemeFragment extends BaseGiftContentFragment {
     @Override
     public void initData() {
 
-        if(BaseApplication.getInstance().getCount() != 1){
+        if (BaseApplication.getInstance().getCount() != 1) {
             return;
         }
 
-        getPlanDataFromServer();
 
         fragmentManager = getFragmentManager();
 
@@ -91,13 +99,7 @@ public class ContentSchemeFragment extends BaseGiftContentFragment {
 
     }
 
-    /**
-     *
-     */
-    private void getPlanDataFromServer() {
-
-    }
-
+    int _index = -1;
     public void switchContent(int index) {
 
         textViews.clear();
@@ -160,6 +162,7 @@ public class ContentSchemeFragment extends BaseGiftContentFragment {
         }
         BaseApplication.getInstance().setCount(2);
         transaction.commit();
+        _index = index;
     }
 
     /**
@@ -183,4 +186,27 @@ public class ContentSchemeFragment extends BaseGiftContentFragment {
         }
     }
 
+    /**
+     * 联网获取数据后设置数据
+     *
+     * @param giftSchemeBean
+     */
+    public void setData(GiftSchemeBean giftSchemeBean) {
+//        tags = giftSchemeBean.getTags();
+//        for (int i = 0; i < tags.size(); i++) {
+//            textViews.get(i).setText(tags.get(i).getName());
+//        }
+        this.giftSchemeBean = giftSchemeBean;
+        typelist = giftSchemeBean.getTypelist();
+        for (int i =0;i<typelist.size();i++){
+            LogUtil.e("联网后设置二级Tab TextView");
+            textViews.get(i).setText(typelist.get(i).getTypename());
+        }
+
+        if(_index == 0){
+            giftSituationFragment.setData(giftSchemeBean);
+        }else if(_index == 1){
+            giftObjectFragment.setData(giftSchemeBean);
+        }
+    }
 }

@@ -1,11 +1,13 @@
 package com.liuhui.ceremony.app.ui.fragment.lovergift;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseGiftContentFragment;
+import com.liuhui.ceremony.app.bean.GiftSchemeBean;
 
 import butterknife.ButterKnife;
 
@@ -14,6 +16,9 @@ import butterknife.ButterKnife;
  * Created by anany on 15/8/20.
  */
 public class GiftObjectFragment extends BaseGiftContentFragment{
+
+
+    public Context mContext;
 
 
     @Override
@@ -25,6 +30,10 @@ public class GiftObjectFragment extends BaseGiftContentFragment{
 
     @Override
     public void initData() {
+
+    }
+
+    public void setData(GiftSchemeBean giftSchemeBean) {
 
     }
 }

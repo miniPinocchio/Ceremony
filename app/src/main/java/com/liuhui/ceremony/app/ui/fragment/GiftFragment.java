@@ -7,12 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.liuhui.ceremony.app.Api;
 import com.liuhui.ceremony.app.BaseApplication;
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseHomeFragment;
+import com.liuhui.ceremony.app.bean.GiftSchemeBean;
 import com.liuhui.ceremony.app.ui.fragment.lovergift.ContentSchemeFragment;
 import com.liuhui.ceremony.app.ui.fragment.lovergift.ContentStoryFragment;
 import com.liuhui.ceremony.app.util.LogUtil;
+import com.liuhui.ceremony.app.util.OkHttpClientManager;
+import com.squareup.okhttp.Request;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -62,6 +66,28 @@ public class GiftFragment extends BaseHomeFragment {
 
         fragmentManager = getFragmentManager();
         switchContent(0);
+        getLoverGiftData();
+    }
+
+    /**
+     * 获取情礼攻略数据
+     */
+    private void getLoverGiftData() {
+//        Map<String,String> params = new HashMap<String,String>();
+//        params.put("")
+        OkHttpClientManager.postAsyn(Api.GIFT, new OkHttpClientManager.ResultCallback<GiftSchemeBean>() {
+            @Override
+            public void onError(Request request, Exception e) {
+
+            }
+
+            @Override
+            public void onResponse(GiftSchemeBean giftSchemeBean) {
+                if(_index == 0){
+                    contentSchemeFragment.setData(giftSchemeBean);
+                }
+            }
+        },new OkHttpClientManager.Param("uid", BaseApplication.getInstance().getUserId()));
     }
 
     @OnClick(value = {R.id.iv_btn_search, R.id.ll_scheme, R.id.ll_story})
@@ -78,6 +104,7 @@ public class GiftFragment extends BaseHomeFragment {
         }
     }
 
+    int _index = -1;
     public void switchContent(int index) {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         // 先隐藏掉所有的Fragment，以防止有多个Fragment显示在界面上的情况
@@ -108,6 +135,7 @@ public class GiftFragment extends BaseHomeFragment {
                 }
                 break;
         }
+        _index = index;
         transaction.commit();
         instance.setCount(1);
     }

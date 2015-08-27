@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.liuhui.ceremony.app.R;
 import com.liuhui.ceremony.app.base.BaseHomeFragment;
-import com.liuhui.ceremony.app.ui.activity.DiscoverGralleryActivity;
+import com.liuhui.ceremony.app.ui.activity.DiscoverGalleryActivity;
 import com.liuhui.ceremony.app.ui.activity.DiscoverMsgTemplateActivity;
 import com.liuhui.ceremony.app.util.LogUtil;
 
@@ -45,7 +45,7 @@ public class DiscoverFragment extends BaseHomeFragment {
         Intent intent = null;
         switch (v.getId()) {
             case R.id.tv_discover_gralley://相册
-                intent = new Intent(getActivity(), DiscoverGralleryActivity.class);
+                intent = new Intent(getActivity(), DiscoverGalleryActivity.class);
                 break;
             case R.id.tv_discover_qltx://情礼提醒
                 break;

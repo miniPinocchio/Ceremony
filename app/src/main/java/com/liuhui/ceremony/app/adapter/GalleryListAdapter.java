@@ -22,12 +22,12 @@ import java.util.List;
  * 相册ListView数据适配器
  * Created by anany on 15/8/25.
  */
-public class GralleryListAdapter extends BaseAdapter {
+public class GalleryListAdapter extends BaseAdapter {
 
     GralleryItemList gralleryItemList;
     Context context;
 
-    public GralleryListAdapter(Context context, GralleryItemList gralleryItemList) {
+    public GalleryListAdapter(Context context, GralleryItemList gralleryItemList) {
 
         this.context = context;
         this.gralleryItemList = gralleryItemList;
@@ -118,6 +118,10 @@ public class GralleryListAdapter extends BaseAdapter {
 
 
         return convertView;
+    }
+
+    public void setData(GralleryItemList gralleryItemList) {
+        this.gralleryItemList = gralleryItemList;
     }
 
     static class GralleryHolder {

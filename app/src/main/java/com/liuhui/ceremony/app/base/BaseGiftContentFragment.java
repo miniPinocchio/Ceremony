@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.liuhui.ceremony.app.bean.GiftSchemeBean;
 import com.liuhui.ceremony.app.util.LogUtil;
 
 import butterknife.ButterKnife;
@@ -69,4 +70,6 @@ public abstract class BaseGiftContentFragment extends Fragment {
      * 子类需要初始化自己的数据
      */
     public abstract void initData();
+
+    public abstract void setData(GiftSchemeBean giftSchemeBean);
 }
