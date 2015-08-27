@@ -7,37 +7,44 @@ import android.widget.BaseAdapter;
 
 import com.liuhui.ceremony.app.bean.GiftSchemeBean;
 
+import java.util.List;
+
 /**
+ *  情礼攻略三级Tab 内容 ListView 适配器
  * Created by anany on 15/8/27.
  */
-public class LoverGifyTabContentAdapter extends BaseAdapter {
+public class LoverGiftTabContentAdapter extends BaseAdapter {
 
     private Context mContext;
 
-    private GiftSchemeBean giftSchemeBean;
+    List<GiftSchemeBean.IdealistEntity> idealistEntities;
 
-    public LoverGifyTabContentAdapter(Context context, GiftSchemeBean giftSchemeBean) {
+    public LoverGiftTabContentAdapter(Context context, List<GiftSchemeBean.IdealistEntity> idealistEntities) {
         mContext = context;
-        this.giftSchemeBean = giftSchemeBean;
+        this.idealistEntities = idealistEntities;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return idealistEntities.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return idealistEntities.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         return null;
+    }
+
+    static class LoverGiftTabContentHolder{
+
     }
 }

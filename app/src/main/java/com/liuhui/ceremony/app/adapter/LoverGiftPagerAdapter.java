@@ -10,6 +10,7 @@ import com.liuhui.ceremony.app.ui.fragment.lovergift.LoverGiftTab;
 import java.util.List;
 
 /**
+ *  情礼攻略三级Tab viewpager Tab适配器
  * Created by anany on 15/8/27.
  */
 public class LoverGiftPagerAdapter extends PagerAdapter {
